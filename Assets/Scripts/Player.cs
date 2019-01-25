@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OldMan : MonoBehaviour {
+public class Player : MonoBehaviour {
 
 	private int age;
 	private float jump;
@@ -16,7 +16,7 @@ public class OldMan : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		rb = GetComponent<Rigidbody>();
+		rb = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
@@ -28,6 +28,7 @@ public class OldMan : MonoBehaviour {
 
 	void FixedUpdate() {
 		CharacterController (speed);
+		
 	}
 
 	void CharacterController (float pSpeed) {
@@ -64,8 +65,4 @@ public class OldMan : MonoBehaviour {
 		}
 
 	}
-
-
 }
-
-
