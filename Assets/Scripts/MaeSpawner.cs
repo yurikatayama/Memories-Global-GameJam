@@ -10,7 +10,7 @@ public class MaeSpawner : MonoBehaviour {
 	public float spawnTimer = 0;
 	// Use this for initialization
 	void Start () {
-		spawnTime = 100f * 11.5f;
+		spawnTime = 100f * 11.6f;
 	}
 	// Update is called once per frame
 	void FixedUpdate () {
