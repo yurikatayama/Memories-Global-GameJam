@@ -16,17 +16,6 @@ public static class PlayerActions {
 	public static int	maxEventCount		= Random.Range(15, 50);
 	public static bool 	eventCollider 		= true;
 
-	/*
-	public static bool 
-	public static bool 
-	public static bool 
-	public static bool 
-	public static bool 
-	public static bool 
-	public static bool 
-	public static bool 
-	*/
-
 	public static void ContadorEvento () {
 		if (Input.GetKeyDown(KeyCode.Space) && boolPombos) {
 			contador++;
