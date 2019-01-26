@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class ChaoOffset : MonoBehaviour {
 
-	
+	private Material currentMaterial;
 	private Renderer rendy;
 	public float speed;
 	private float offset;
 
 	// Use this for initialization
 	void Start () {
-		
 		rendy = GetComponent<Renderer>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		
 		offset += Time.deltaTime * speed;
-		rendy.material.SetTextureOffset ("_MainTex", new Vector2 (0, -offset));
+		rendy.material.SetTextureOffset ("_MainTex", new Vector2 (offset, 0));
 		
 	}
-	
+
 }
