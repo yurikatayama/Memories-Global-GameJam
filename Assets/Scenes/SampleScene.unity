@@ -164,7 +164,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d4799737158f1d946a847b94a7f040c3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5b82b9c5998ddc438e4e5fae5d998c6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -182,8 +182,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 36510960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.464, y: 0.975, z: 0.27}
-  m_LocalScale: {x: 1.855, y: 1.1187301, z: 1}
+  m_LocalPosition: {x: -0.464, y: -0.0074, z: 0.27}
+  m_LocalScale: {x: 1.855, y: 1.3038757, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -358,8 +358,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 57876123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.08, y: 0.118, z: 0}
-  m_LocalScale: {x: 0.429, y: 1.3341868, z: 1}
+  m_LocalPosition: {x: 11.08, y: -0.0082, z: 0}
+  m_LocalScale: {x: 0.429, y: 1.3041427, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -697,8 +697,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.2, y: 3.98}
-    newSize: {x: 19.2, y: 3.37}
+    oldSize: {x: 19.2, y: 3.42}
+    newSize: {x: 19.2, y: 3.42}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -746,7 +746,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 19.2, y: 3.37}
+  m_Size: {x: 19.2, y: 3.42}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -759,7 +759,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534793253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: -3.18, z: 0}
+  m_LocalPosition: {x: -0.03, y: -3.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -836,8 +836,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 585181689}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.18, y: 0.14, z: 0}
-  m_LocalScale: {x: 0.429, y: 1.3391039, z: 1}
+  m_LocalPosition: {x: -11.18, y: -0.009, z: 0}
+  m_LocalScale: {x: 0.429, y: 1.3056213, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
