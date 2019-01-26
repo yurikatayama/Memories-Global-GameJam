@@ -164,7 +164,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 092ce429c47a68348935a98b6df32200, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4799737158f1d946a847b94a7f040c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -257,7 +257,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39752251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.35, y: -0.02, z: 0}
+  m_LocalPosition: {x: -5.35, y: -0.02, z: -0.22}
   m_LocalScale: {x: 1, y: 1.305, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -467,6 +467,7 @@ GameObject:
   - component: {fileID: 519420035}
   - component: {fileID: 519420037}
   - component: {fileID: 519420036}
+  - component: {fileID: 519420038}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -634,6 +635,22 @@ MonoBehaviour:
   spawnTime: 0
   spawnPoint: {x: 0, y: 0, z: 0}
   spawnTimer: 0
+--- !u!114 &519420038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f44bf5cad2350274aa3529e411b04e27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectDiploma:
+  - {fileID: 1483068032266868, guid: f9f1f73cd96ca2049aca5f5cd1a71a06, type: 2}
+  spawnTime: 0
+  spawnPoint: {x: 0, y: 0, z: 0}
+  spawnTimer: 0
 --- !u!1 &534793253
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,7 +697,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.2, y: 3.9}
+    oldSize: {x: 19.2, y: 3.98}
     newSize: {x: 19.2, y: 3.37}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1106,7 +1123,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4084910576270008, guid: 5e0a19e47a9dfa04eaaef9861e702626, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.31
       objectReference: {fileID: 0}
     - target: {fileID: 4084910576270008, guid: 5e0a19e47a9dfa04eaaef9861e702626, type: 2}
       propertyPath: m_LocalRotation.x

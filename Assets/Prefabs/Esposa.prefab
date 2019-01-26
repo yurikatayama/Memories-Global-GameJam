@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212014276786728746}
   - component: {fileID: 61683059135477410}
   - component: {fileID: 114800008661197914}
-  - component: {fileID: 114297824760811196}
+  - component: {fileID: 114784948221116684}
   m_Layer: 0
   m_Name: Esposa
   m_TagString: Fases da Vida
@@ -68,7 +68,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 15.070109}
   m_EdgeRadius: 0
---- !u!114 &114297824760811196
+--- !u!114 &114784948221116684
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1255093748262362}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a57b2a75a716b1468d87ca852d988ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 4251b5789f793924f9022f5b14d3b64d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114800008661197914

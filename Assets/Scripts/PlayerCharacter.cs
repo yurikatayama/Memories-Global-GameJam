@@ -53,6 +53,7 @@ public class PlayerCharacter : MonoBehaviour {
 		} else if (jumping) {
 			canJump = Time.time + 0.3f;
 		}
+		
 		if (eventWrapper) {
 			rb.velocity = new Vector2(0, 0);
 			if (PlayerActions.contador == PlayerActions.maxEventCount) {
@@ -75,7 +76,7 @@ public class PlayerCharacter : MonoBehaviour {
 			infarto += 0.05f * Time.deltaTime;
 		}
 
-		if (Input.GetKeyDown(KeyCode.O) && age < 4) {
+		if (Input.GetKeyDown(KeyCode.O) && age <= 4) {
 			age++;
 			AgeChanger (age);
 			Debug.Log ("Age: " + age);
@@ -105,7 +106,7 @@ public class PlayerCharacter : MonoBehaviour {
             SetPlayerCharacter(4f, 3.5f, 0.5f);
         }
 		if (age == 4) {
-            SetPlayerCharacter(8f, 3.5f, 0.25f);
+            SetPlayerCharacter(6f, 3.5f, 0.25f);
 		}
 		if (PlayerActions.gameOverCond) {
 			SetPlayerCharacter(0f, 0f, 0f);

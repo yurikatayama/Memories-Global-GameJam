@@ -10,7 +10,7 @@ public class DiplomaSpawner : MonoBehaviour {
 	public float spawnTimer = 0;
 	// Use this for initialization
 	void Start () {
-		spawnTime = 96f * 2;
+		spawnTime = 100f * 3.5f;
 	}
 	// Update is called once per frame
 	void FixedUpdate () {
