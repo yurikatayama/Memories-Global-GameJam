@@ -73,7 +73,7 @@ public class PlayerCharacter : MonoBehaviour {
 			Time.timeScale = 0;
 		} else {
 			stress = Random.Range (30f, 120f);
-			infarto += 0.5f * Time.deltaTime;
+			infarto += 0.1f * Time.deltaTime;
 		}
 
 		if (Input.GetKeyDown(KeyCode.O) && age < 4) {
@@ -91,7 +91,7 @@ public class PlayerCharacter : MonoBehaviour {
 
 	void AgeChanger (float playerAge) {
 		
-		Time.timeScale = playerAge * 2;
+		Time.timeScale = playerAge * 1.5f;
 		if (age == 1) {
             SetPlayerCharacter(2f, 0, 1);
         }
