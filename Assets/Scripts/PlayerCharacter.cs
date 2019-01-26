@@ -12,8 +12,6 @@ public class PlayerCharacter : MonoBehaviour {
 	public float speed;
 	public float jump;
 
-	private float moveLeft;
-
 	private bool jumping 		= true;
 	private bool eventWrapper 	= false;
 =======
@@ -30,11 +28,14 @@ public class PlayerCharacter : MonoBehaviour {
 		infarto = 0.5f;
 		stress = 10;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		moveLeft = 0.5f;
 =======
 		tipoTrap = Random.Range(1, 6);
 		instanciaEvento(0, tipoTrap);
 >>>>>>> 256f8d20cd4ece3852e3848255cb9402f8a7debb
+=======
+>>>>>>> parent of d5d5257... commiteeeeeee
 	}
 	
 	// Update is called once per frame
@@ -72,8 +73,6 @@ public class PlayerCharacter : MonoBehaviour {
 			stress = Random.Range (30f, 100f);
 			infarto += 1 * Time.deltaTime;
 		}
-
-		transform.Translate (-moveLeft * Time.deltaTime, 0, 0);
 	}
 
 
