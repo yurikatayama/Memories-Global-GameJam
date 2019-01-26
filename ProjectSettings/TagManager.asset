@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - ground
-  - pombos
   - Event Trap
+  - Game Over
   layers:
   - Default
   - TransparentFX

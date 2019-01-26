@@ -5,34 +5,21 @@ using UnityEngine;
 public class PlayerCharacter : MonoBehaviour {
 
 	private int age;
-	private float jumpMultiplyer;
-	private float speedMultiplyer;
-	private float details;
+	private float jumpMultiplyer, speedMultiplyer, details, initialSpeed,
+				  initialJump, speed, jump, moveLeft, infarto, stress,
+				  canJump = 0f;
+	float vert, hori;
 	private Rigidbody2D rb;
-
-	private float initialSpeed;
-	private float initialJump;
-	public float speed;
-	public float jump;
-
-	private float moveLeft;
-
 	private bool jumping 		= true;
 	private bool eventWrapper 	= false;
 	private GameObject gameObj;
-
-	private float infarto;
-	private float stress;
-
-	float vert;
-	float hori;
 	
 	// private float miopia;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
-		age = 3;
+		age = 1;
 		infarto = 0.5f;
 		stress = 10;
 		moveLeft = 0.5f;
@@ -43,11 +30,9 @@ public class PlayerCharacter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		
 		//	Time.timeScale = age;
 
-        vert = Input.GetAxis("Vertical");
+        vert = Input.GetAxisRaw("Vertical");
         hori = Input.GetAxis("Horizontal");
 
 		PlayerActions.ContadorEvento();
@@ -56,7 +41,13 @@ public class PlayerCharacter : MonoBehaviour {
 
 	void FixedUpdate() {
         if(!jumping && !eventWrapper) {
-			rb.velocity = new Vector2(hori * speed, vert * jump);
+			if (Time.time > canJump) {
+				rb.velocity = new Vector2(hori * speed, vert * jump);
+			} else {
+				rb.velocity = new Vector2(hori * speed, 0);
+			}
+		} else if (jumping) {
+			canJump = Time.time + 0.3f;
 		}
 		if (eventWrapper) {
 			rb.velocity = new Vector2(0, 0);
