@@ -30,7 +30,7 @@ public class NuvemSpawner : MonoBehaviour {
 	void Spawn ()
      {
          spawnPoint.x = 11;
-         spawnPoint.y = -1;
+         spawnPoint.y = Random.Range(0.5f, 5);
          Instantiate(objectsNuvem[Random.Range(0, objectsNuvem.Length - 1)], spawnPoint, Quaternion.identity);
      }
 }

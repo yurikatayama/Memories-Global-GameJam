@@ -11,7 +11,7 @@ public class ArvoreSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		spawnTime = 12f;
+		spawnTime = Random.Range (2,11);
 	}
 	
 	void FixedUpdate () {
@@ -30,7 +30,7 @@ public class ArvoreSpawner : MonoBehaviour {
 	void Spawn ()
      {
          spawnPoint.x = 11;
-         spawnPoint.y = -1;
+         spawnPoint.y = Random.Range(-2, 0);
          Instantiate(objectsArvore[Random.Range(0, objectsArvore.Length - 1)], spawnPoint, Quaternion.identity);
      }
 }
