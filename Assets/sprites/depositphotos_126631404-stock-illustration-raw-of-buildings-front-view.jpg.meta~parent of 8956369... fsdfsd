@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 993e3a79d1c40684bbf39a64328b9b0f
+<<<<<<< HEAD:Assets/sprites/depositphotos_126631404-stock-illustration-raw-of-buildings-front-view.jpg.meta:Assets/sprites/depositphotos_126631404-stock-illustration-raw-of-buildings-front-view.jpg.meta
+guid: 8cb16c1a264e86b4ab2ec50fb392b932
+=======
+guid: d4799737158f1d946a847b94a7f040c3
+>>>>>>> parent of 8956369... fsdfsd:Assets/sprites/fundo azull.jpg.meta:Assets/sprites/fundo azull.jpg.meta
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -75,11 +79,11 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-<<<<<<< HEAD:Assets/sprites/depositphotos_22198705-stock-photo-retro-revival-store-front-street.jpg.meta
-    spriteID: 687ea27a43ad33e4db7ed96500d15347
+<<<<<<< HEAD:Assets/sprites/depositphotos_126631404-stock-illustration-raw-of-buildings-front-view.jpg.meta:Assets/sprites/depositphotos_126631404-stock-illustration-raw-of-buildings-front-view.jpg.meta
+    spriteID: 7a74fba43682d9f40999f6de3596611a
 =======
-    spriteID: 04d784c738d05f24dab53d7353ec81ed
->>>>>>> parent of cc16741... Revert "Merge branch 'master' of https://github.com/SamuraiExecutivo/Global-GameJam":Assets/sprites/solo.png.meta
+    spriteID: 45ce7e3812de6f646bb0f3db9f194fc5
+>>>>>>> parent of 8956369... fsdfsd:Assets/sprites/fundo azull.jpg.meta:Assets/sprites/fundo azull.jpg.meta
     vertices: []
     indices: 
     edges: []

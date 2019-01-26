@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 993e3a79d1c40684bbf39a64328b9b0f
+guid: 4b4b560b62749c94592bd5985ff1665a
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -75,11 +75,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-<<<<<<< HEAD:Assets/sprites/depositphotos_22198705-stock-photo-retro-revival-store-front-street.jpg.meta
-    spriteID: 687ea27a43ad33e4db7ed96500d15347
-=======
-    spriteID: 04d784c738d05f24dab53d7353ec81ed
->>>>>>> parent of cc16741... Revert "Merge branch 'master' of https://github.com/SamuraiExecutivo/Global-GameJam":Assets/sprites/solo.png.meta
+    spriteID: 0b46babf732292b479b103f939397702
     vertices: []
     indices: 
     edges: []
