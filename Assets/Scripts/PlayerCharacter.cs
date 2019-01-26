@@ -29,11 +29,14 @@ public class PlayerCharacter : MonoBehaviour {
 		stress = 10;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		moveLeft = 0.5f;
 =======
 		tipoTrap = Random.Range(1, 6);
 		instanciaEvento(0, tipoTrap);
 >>>>>>> 256f8d20cd4ece3852e3848255cb9402f8a7debb
+=======
+>>>>>>> parent of d5d5257... commiteeeeeee
 =======
 >>>>>>> parent of d5d5257... commiteeeeeee
 	}
