@@ -10,6 +10,7 @@ public static class PlayerActions {
 	public static bool 	boolCasal			= false;
 	public static bool 	Hidrante			= false;
 	public static bool	boolCamelo			= false;
+	public static bool	gameOverCond		= false;
 
 	public static float	timer 				= 20;
 	public static int 	contador 			= 0;

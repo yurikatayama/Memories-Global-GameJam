@@ -16,6 +16,10 @@ public class TutorialBehavior : MonoBehaviour {
 	void Update () {
 
 		transform.Translate (-speed * Time.deltaTime, 0, 0);	
+		
+		if (PlayerActions.gameOverCond) {
+			speed = 0;
+		}
 
 		if (transform.position.x <= -25) {
 			Destroy (this);
