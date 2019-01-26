@@ -274,7 +274,7 @@ GameObject:
   - component: {fileID: 57876125}
   - component: {fileID: 57876124}
   m_Layer: 0
-  m_Name: Game outro (1)
+  m_Name: "Parede Refor\xE7ada de Metal Blindado Aero-Espacial da Nasa "
   m_TagString: Game Over
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
