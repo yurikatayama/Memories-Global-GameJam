@@ -19,7 +19,7 @@ public class ChaoOffset : MonoBehaviour {
 	void Update () {
 
 		
-		offset += Time.deltaTime * speed;
+		offset += Time.deltaTime * -speed;
 		rendy.material.SetTextureOffset ("_MainTex", new Vector2 (-offset, 0));
 		
 	}

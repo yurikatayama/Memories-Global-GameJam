@@ -32,19 +32,19 @@ public class PlayerCharacter : MonoBehaviour {
 		age = 3;
 		infarto = 0.5f;
 		stress = 10;
-		moveLeft = 1;
+		moveLeft = 0.5f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
 		AgeChanger (age);
-		
+		Time.timeScale = age;
 		speed *= speedMultiplyer;
 		jump *= jumpMultiplyer;
 
-        vert = Input.GetAxisRaw("Vertical");
-        hori = Input.GetAxisRaw("Horizontal");
+        vert = Input.GetAxis("Vertical");
+        hori = Input.GetAxis("Horizontal");
 
 		PlayerActions.ContadorEvento();
 		transform.Translate (-moveLeft * Time.deltaTime, 0, 0);
@@ -69,8 +69,17 @@ public class PlayerCharacter : MonoBehaviour {
 			infarto = 0;
 			Time.timeScale = 0;
 		} else {
-			stress = Random.Range (30f, 100f);
-			infarto += 1 * Time.deltaTime;
+			stress = Random.Range (1f, 100f);
+			infarto += 0.5f * Time.deltaTime;
+		}
+
+		if (Input.GetKeyDown(KeyCode.O) && age < 4) {
+			age++;
+			Debug.Log ("Age: " + age);
+		}
+		if (Input.GetKeyDown(KeyCode.P) && age > 1) {
+			age--;
+			Debug.Log ("Age: " + age);
 		}
 	}
 
@@ -79,16 +88,16 @@ public class PlayerCharacter : MonoBehaviour {
 		
 		Time.timeScale = age;
 		if (age == 1) {
-            SetPlayerCharacter(1.5f, 0, 1);
+            SetPlayerCharacter(1f, 0, 1);
         }
 		if (age == 2) {
-            SetPlayerCharacter(0.8f, 0.8f, 0.75f);
+            SetPlayerCharacter(1f, 1f, 0.75f);
         }
 		if (age == 3) {
             SetPlayerCharacter(1f, 1f, 0.5f);
         }
 		if (age == 4) {
-            SetPlayerCharacter(1.5f, 1.5f, 0.25f);
+            SetPlayerCharacter(1f, 1f, 0.25f);
 		}
 	}
 
@@ -103,8 +112,8 @@ public class PlayerCharacter : MonoBehaviour {
     }
 
 	void OnCollisionExit2D(Collision2D collision) {
-		if (collision.gameObject.tag == "ground") jumping = true;
-		if (collision.gameObject.tag == "Event Trap") eventWrapper = false;
+		if (collision.gameObject.tag == "ground") jumping 			= true;
+		if (collision.gameObject.tag == "Event Trap") eventWrapper 	= false;
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision) {
