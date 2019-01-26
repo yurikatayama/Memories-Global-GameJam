@@ -125,7 +125,7 @@ public class PlayerCharacter : MonoBehaviour {
     }
 
 	void OnCollisionExit2D(Collision2D collision) {
-		if (collision.gameObject.tag == "ground") jumping = true;
+		if (collision.gameObject.tag == "ground") jumping 			= true;
 		if (collision.gameObject.tag == "Event Trap") {
 			eventWrapper 	= false;
 			ScoreActions.contador += scoreTime;
