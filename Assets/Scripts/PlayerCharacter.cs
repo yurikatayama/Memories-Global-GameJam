@@ -26,6 +26,7 @@ public class PlayerCharacter : MonoBehaviour {
 		speed = initialSpeed = 1;
 		jump = initialJump = 5;
 		AgeChanger (1);
+		ScoreActions.ResetaContador();
 	}
 	
 	// Update is called once per frame
@@ -119,6 +120,10 @@ public class PlayerCharacter : MonoBehaviour {
 		if (collision.gameObject.tag == "Event Trap") {
 			gameObj = collision.gameObject;
 			setPombosConditions(true, true, 0);
+		}
+		if (collision.gameObject.tag == "Score") {
+			ScoreActions.ContadorEvento();
+			Destroy(collision.gameObject);
 		}
 	}
 
