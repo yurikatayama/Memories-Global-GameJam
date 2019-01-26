@@ -41,8 +41,7 @@ public class PlayerCharacter : MonoBehaviour {
 			vert = 0;
 			Debug.Log ("Voando");
 		} else {
-			//vert = Input.GetAxisRaw("Vertical");
-			rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+			vert = Input.GetAxisRaw("Vertical");
 			Debug.Log ("Pulou");
 			jumping = true;
 		}
@@ -87,7 +86,13 @@ public class PlayerCharacter : MonoBehaviour {
 		
 		if (collision.gameObject.tag == "ground") {
 			jumping = false;
-			Debug.Log("Encostou");
+		}
+	}
+
+	void OnCollisionExit2D(Collision2D collision) {
+		
+		if (collision.gameObject.tag == "ground") {
+			jumping = true;
 		}
 	}
 }
