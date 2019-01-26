@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EventSpawner : MonoBehaviour {
 
-	public GameObject [] objectsEnemy;
+	public GameObject [] objectsEvent;
 	public float spawnTime;
 	public Vector3 spawnPoint;
 	public float spawnTimer = 0;
@@ -31,6 +31,6 @@ public class EventSpawner : MonoBehaviour {
      {
          spawnPoint.x = 11;
          spawnPoint.y = -1;
-         Instantiate(objectsEnemy[Random.Range(0, objectsEnemy.Length - 1)], spawnPoint, Quaternion.identity);
+         Instantiate(objectsEvent[Random.Range(0, objectsEvent.Length - 1)], spawnPoint, Quaternion.identity);
      }
 }
