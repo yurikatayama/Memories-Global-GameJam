@@ -84,7 +84,6 @@ public class PlayerCharacter : MonoBehaviour {
 		if (age == 4) {
             SetPlayerCharacter(1.5f, 1.5f, 0.25f);
 		}
-
 	}
 
     void SetPlayerCharacter(float speedAux, float jumpAux, float detailsAux){
