@@ -10,7 +10,7 @@ public class ScoreSpawner : MonoBehaviour {
 	public float spawnTimer = 0;
 	// Use this for initialization
 	void Start () {
-		spawnTime = 4f;
+		spawnTime = 6f;
 	}
 	
 	// Update is called once per frame
@@ -19,7 +19,7 @@ public class ScoreSpawner : MonoBehaviour {
 		spawnTimer += 1 * Time.deltaTime;
 
 		if (spawnTimer > 1) {
-			spawnTimer -= 0.15f * Time.deltaTime;
+			spawnTimer -= 0.30f * Time.deltaTime;
 		}
 
 		if (spawnTimer > spawnTime) {
