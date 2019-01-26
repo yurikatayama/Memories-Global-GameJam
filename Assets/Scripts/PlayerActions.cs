@@ -13,7 +13,7 @@ public static class PlayerActions {
 
 	public static float	timer 				= 20;
 	public static int 	contador 			= 0;
-	public static int	maxEventCount		= 5;
+	public static int	maxEventCount		= Random.Range(12,40);
 	public static bool 	eventCollider 		= true;
 
 	public static void ContadorEvento () {
