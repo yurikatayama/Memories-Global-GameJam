@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour {
 
-	private int age;
+	private int age, contadorFasesDavida;
 	private float jumpMultiplyer, speedMultiplyer, details, initialSpeed,
 				  initialJump, speed, jump, moveLeft, infarto, stress,
 				  canJump = 0f;
@@ -27,6 +27,7 @@ public class PlayerCharacter : MonoBehaviour {
 		jump = initialJump = 5;
 		AgeChanger (1);
 		ScoreActions.ResetaContador();
+		contadorFasesDavida = 0;
 	}
 	
 	// Update is called once per frame
@@ -41,6 +42,7 @@ public class PlayerCharacter : MonoBehaviour {
     }
 
 	void FixedUpdate() {
+		AgeChanger (age);
         if(!jumping && !eventWrapper) {
 			if (Time.time > canJump) {
 				rb.velocity = new Vector2(hori * speed, vert * jump);
@@ -124,6 +126,21 @@ public class PlayerCharacter : MonoBehaviour {
 		if (collision.gameObject.tag == "Score") {
 			ScoreActions.ContadorEvento();
 			Destroy(collision.gameObject);
+		}
+		if (collision.gameObject.tag == "Fases da Vida") {
+			if (contadorFasesDavida == 0) {
+				age = 2;
+				Debug.Log("esposa");
+			} else if (contadorFasesDavida == 1) {
+				age = 3;
+				Debug.Log("diploma");
+			} else if (contadorFasesDavida == 2) {
+				age = 4;
+				Debug.Log("guitarra");
+			} else if (contadorFasesDavida == 3) {
+				Debug.Log("mae");
+			}
+			contadorFasesDavida++;
 		}
 	}
 

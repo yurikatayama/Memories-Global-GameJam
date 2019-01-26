@@ -18,5 +18,8 @@ public class Trap : MonoBehaviour {
 		if (collider.gameObject.tag == "Score") {
 			Destroy(collider.gameObject);
 		}
+		if (collider.gameObject.tag == "Fases da Vida") {
+			Destroy(this);
+		}
 	}
 }
