@@ -4,24 +4,13 @@ using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour {
 
-	private int age;
-	private float jumpMultiplyer;
-	private float speedMultiplyer;
-	private float details;
+	private int age, tipoTrap;
+	private float jumpMultiplyer, speedMultiplyer, details, speed, jump, stress, infarto;
+	float vert, hori;
 	private Rigidbody2D rb;
-	public float speed;
-	public float jump;
-
-	private bool jumping 		= true;
-	private bool eventWrapper 	= false;
+	private bool jumping 		= true,
+				 eventWrapper 	= false;
 	private GameObject gameObj;
-
-	private float infarto;
-	private float stress;
-
-	float vert;
-	float hori;
-	
 	// private float miopia;
 
 	// Use this for initialization
@@ -30,6 +19,8 @@ public class PlayerCharacter : MonoBehaviour {
 		age = 3;
 		infarto = 0.5f;
 		stress = 10;
+		tipoTrap = Random.Range(1, 6);
+		instanciaEvento(0, tipoTrap);
 	}
 	
 	// Update is called once per frame
@@ -43,7 +34,7 @@ public class PlayerCharacter : MonoBehaviour {
         vert = Input.GetAxisRaw("Vertical");
         hori = Input.GetAxisRaw("Horizontal");
 
-		PlayerActions.ContadorEvento();
+		PlayerActions.ContadorEvento(tipoTrap);
     }
 
 	void FixedUpdate() {
@@ -54,7 +45,6 @@ public class PlayerCharacter : MonoBehaviour {
 			rb.velocity = new Vector2(0, 0);
 			if (PlayerActions.contador == PlayerActions.maxEventCount) {
 				Destroy(gameObj);
-				setPombosConditions(false, false, 0);
 			}
 		}
 		
@@ -106,13 +96,13 @@ public class PlayerCharacter : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.gameObject.tag == "Event Trap") {
 			gameObj = collision.gameObject;
-			setPombosConditions(true, true, 0);
+			eventWrapper = true;
 		}
 	}
 
-	void setPombosConditions(bool evWrp, bool boolPombos, int resetCounter) {
-		eventWrapper 				= evWrp;
-		PlayerActions.boolPombos 	= boolPombos;
+	void instanciaEvento(int resetCounter, int intTrap) {
+		PlayerActions.intTrap 	= intTrap;
 		PlayerActions.contador	 	= resetCounter;
+		PlayerActions.maxEventCount = Random.Range(12, 25);
 	}
 }
