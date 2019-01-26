@@ -347,7 +347,12 @@ Prefab:
       propertyPath: m_TagString
       value: Event Trap
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1710067002018064, guid: cca07538aeb39304bb74654d76ad729f, type: 2}
+      propertyPath: m_TagString
+      value: Event Trap
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114820149937407836, guid: cca07538aeb39304bb74654d76ad729f, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: cca07538aeb39304bb74654d76ad729f, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1501456185
