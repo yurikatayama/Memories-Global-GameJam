@@ -25,7 +25,13 @@ public class IMGUOVER : MonoBehaviour {
 
 	void OnGUI() {
 
-		GUI.Box(new Rect(tx/4, 5*ty/7, tx/2, ty/6), "Iu Lost\nO T Á R I O !\n da espaço aí");
+		if (GUI.Button(new Rect(tx/5, 7*ty/9, tx/5, ty/6), "MENU")){
+			SceneManager.LoadScene(0);
+		}
+
+		if (GUI.Button(new Rect(3*tx/5, 7*ty/9, tx/5, ty/6), "Try Again")){
+			SceneManager.LoadScene(1);
+		}
 
 	}
 }
