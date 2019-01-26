@@ -39,14 +39,10 @@ public class PlayerCharacter : MonoBehaviour {
         vert = Input.GetAxisRaw("Vertical");
         hori = Input.GetAxisRaw("Horizontal");
 
-	}
+    }
 
 	void FixedUpdate() {
-
-        if(!jumping) {
-            rb.velocity = new Vector2(hori * speed, vert * jump);
-        }
-		
+        if(!jumping) rb.velocity = new Vector2(hori * speed, vert * jump);
 	}
 
 
@@ -74,14 +70,10 @@ public class PlayerCharacter : MonoBehaviour {
     }
 
 	void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.tag == "ground") {
-            jumping = false;
-        }
+        if (collision.gameObject.tag == "ground") jumping = false;
     }
 
 	void OnCollisionExit2D(Collision2D collision) {
-		if (collision.gameObject.tag == "ground") {
-			jumping = true;
-		}
+		if (collision.gameObject.tag == "ground") jumping = true;
 	}
 }
