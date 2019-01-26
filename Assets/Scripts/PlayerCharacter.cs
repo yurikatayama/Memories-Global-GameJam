@@ -42,6 +42,8 @@ public class PlayerCharacter : MonoBehaviour {
 
         vert = Input.GetAxisRaw("Vertical");
         hori = Input.GetAxisRaw("Horizontal");
+
+		PlayerActions.ContarPombos();
     }
 
 	void FixedUpdate() {
