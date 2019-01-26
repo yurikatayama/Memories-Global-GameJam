@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 05291a65b27265340bcdea65591b2a12
+=======
+guid: 3b9673eaaedad8c4c9ccadd0354f69f1
+>>>>>>> parent of d749b7e... Revert "jump"
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -75,7 +79,11 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
+<<<<<<< HEAD
     spriteID: f2930882bf5c868469948dfc9bb80509
+=======
+    spriteID: a6f54d7094a58294489af8afdbc0867d
+>>>>>>> parent of d749b7e... Revert "jump"
     vertices: []
     indices: 
     edges: []
