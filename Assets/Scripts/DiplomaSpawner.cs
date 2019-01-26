@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EsposaSpawner : MonoBehaviour {
+public class DiplomaSpawner : MonoBehaviour {
 
-	public GameObject [] objectEsposa;
+	public GameObject [] objectDiploma;
 	public float spawnTime;
 	public Vector3 spawnPoint;
 	public float spawnTimer = 0;
 	// Use this for initialization
 	void Start () {
-		spawnTime = 36f;
+		spawnTime = 96f;
 	}
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -25,6 +25,6 @@ public class EsposaSpawner : MonoBehaviour {
 	void Spawn ()	{
 		spawnPoint.x = 15;
 		spawnPoint.y = -1;
-		Instantiate(objectEsposa[Random.Range(0, objectEsposa.Length - 1)], spawnPoint, Quaternion.identity);
+		Instantiate(objectDiploma[Random.Range(0, objectDiploma.Length - 1)], spawnPoint, Quaternion.identity);
      }
 }

@@ -9,94 +9,94 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1255093748262362}
+  m_RootGameObject: {fileID: 1469607633293400}
   m_IsPrefabAsset: 1
---- !u!1 &1255093748262362
+--- !u!1 &1469607633293400
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4617284025138768}
-  - component: {fileID: 212014276786728746}
-  - component: {fileID: 61683059135477410}
-  - component: {fileID: 114800008661197914}
-  - component: {fileID: 114297824760811196}
+  - component: {fileID: 4535859106773768}
+  - component: {fileID: 212883067078651430}
+  - component: {fileID: 61178939409063250}
+  - component: {fileID: 114785009493272800}
+  - component: {fileID: 114378422937605696}
   m_Layer: 0
-  m_Name: Esposa
+  m_Name: diploma
   m_TagString: Fases da Vida
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4617284025138768
+--- !u!4 &4535859106773768
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1255093748262362}
+  m_GameObject: {fileID: 1469607633293400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: -1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 6.83, y: -1.23, z: 0}
+  m_LocalScale: {x: 0.441, y: 0.441, z: 0.441}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61683059135477410
+--- !u!61 &61178939409063250
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1255093748262362}
+  m_GameObject: {fileID: 1469607633293400}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 6.255055}
+  m_Offset: {x: 0, y: 13.348833}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
-    newSize: {x: 2.56, y: 2.56}
+    oldSize: {x: 7.11, y: 7.08}
+    newSize: {x: 7.11, y: 7.08}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.56, y: 15.070109}
+  m_Size: {x: 7.11, y: 33.77768}
   m_EdgeRadius: 0
---- !u!114 &114297824760811196
+--- !u!114 &114378422937605696
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1255093748262362}
+  m_GameObject: {fileID: 1469607633293400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a57b2a75a716b1468d87ca852d988ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 815f19b9094a84642b421c438cdf5269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114800008661197914
+--- !u!114 &114785009493272800
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1255093748262362}
+  m_GameObject: {fileID: 1469607633293400}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a51b9fe12a814a140b64ee89f0829f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
---- !u!212 &212014276786728746
+--- !u!212 &212883067078651430
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1255093748262362}
+  m_GameObject: {fileID: 1469607633293400}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -126,12 +126,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cb0cc7fe0419c1247bf5afac5b16ca21, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 321fb83323d4812418bdc772172c7115, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.56, y: 2.56}
+  m_Size: {x: 7.11, y: 7.08}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
