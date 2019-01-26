@@ -18,6 +18,9 @@ public class ChaoOffset : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if (PlayerActions.gameOverCond) {
+			speed = 0;
+		}
 		
 		offset += Time.deltaTime * -speed;
 		rendy.material.SetTextureOffset ("_MainTex", new Vector2 (-offset, 0));

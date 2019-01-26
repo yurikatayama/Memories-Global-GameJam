@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCharacter : MonoBehaviour {
 
@@ -60,15 +61,19 @@ public class PlayerCharacter : MonoBehaviour {
 				setPombosConditions(false, false, 0);
 			}
 		}
+		if (PlayerActions.gameOverCond) {
+			moveLeft = 0;
+		}
 		
 		if (stress <= infarto) {
 			Debug.Log("Infarto Fulminante");
 			stress = 0;
 			infarto = 0;
-			Time.timeScale = 0;
+			PlayerActions.gameOverCond = true;
+			Invoke ("GameOverCondition", 4);
 		} else {
-			stress = Random.Range (30f, 120f);
-			infarto += 0.1f * Time.deltaTime;
+			stress = Random.Range (30f, 140f);
+			infarto += 0.05f * Time.deltaTime;
 		}
 
 		if (Input.GetKeyDown(KeyCode.O) && age <= 4) {
@@ -81,6 +86,10 @@ public class PlayerCharacter : MonoBehaviour {
 			AgeChanger (age);
 			Debug.Log ("Age: " + age);
 		}
+	}
+
+	void GameOverCondition () {
+			SceneManager.LoadScene(2);
 	}
 
 
@@ -98,6 +107,9 @@ public class PlayerCharacter : MonoBehaviour {
         }
 		if (age == 4) {
             SetPlayerCharacter(6f, 3.5f, 0.25f);
+		}
+		if (PlayerActions.gameOverCond) {
+			SetPlayerCharacter(0f, 0f, 0f);
 		}
 	}
 

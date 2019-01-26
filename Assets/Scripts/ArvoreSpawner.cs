@@ -15,16 +15,23 @@ public class ArvoreSpawner : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-		spawnTimer += 1 * Time.deltaTime;
+		if (PlayerActions.gameOverCond) {
+			spawnTime = 0;
+			spawnTimer = 0;
+		} else {
+			spawnTimer += 1 * Time.deltaTime;
 
-		if (spawnTimer > 1) {
-			spawnTimer -= 0.15f * Time.deltaTime;
+			if (spawnTimer > 1) {
+				spawnTimer -= 0.15f * Time.deltaTime;
+			}
+
+			if (spawnTimer > spawnTime) {
+				Spawn ();
+				spawnTimer = 0;
+			} 
 		}
 
-		if (spawnTimer > spawnTime) {
-			Spawn ();
-			spawnTimer = 0;
-		}  
+		
 	}
 
 	void Spawn ()
