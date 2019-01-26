@@ -33,8 +33,6 @@ public class PlayerCharacter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//	Time.timeScale = age;
-
         vert = Input.GetAxisRaw("Vertical");
         hori = Input.GetAxis("Horizontal");
 
