@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/sprites/depositphotos_126631404-stock-illustration-raw-of-buildings-front-view.jpg.meta:Assets/sprites/depositphotos_126631404-stock-illustration-raw-of-buildings-front-view.jpg.meta
+guid: 8cb16c1a264e86b4ab2ec50fb392b932
+=======
 guid: d4799737158f1d946a847b94a7f040c3
+>>>>>>> parent of 8956369... fsdfsd:Assets/sprites/fundo azull.jpg.meta:Assets/sprites/fundo azull.jpg.meta
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -75,7 +79,11 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
+<<<<<<< HEAD:Assets/sprites/depositphotos_126631404-stock-illustration-raw-of-buildings-front-view.jpg.meta:Assets/sprites/depositphotos_126631404-stock-illustration-raw-of-buildings-front-view.jpg.meta
+    spriteID: 7a74fba43682d9f40999f6de3596611a
+=======
     spriteID: 45ce7e3812de6f646bb0f3db9f194fc5
+>>>>>>> parent of 8956369... fsdfsd:Assets/sprites/fundo azull.jpg.meta:Assets/sprites/fundo azull.jpg.meta
     vertices: []
     indices: 
     edges: []
