@@ -38,6 +38,7 @@ public class PlayerCharacter : MonoBehaviour {
 		moveLeft = 0.5f;
 		speed = initialSpeed = 1;
 		jump = initialJump = 5;
+		AgeChanger (1);
 	}
 	
 	// Update is called once per frame
