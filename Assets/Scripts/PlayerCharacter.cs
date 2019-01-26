@@ -126,8 +126,9 @@ public class PlayerCharacter : MonoBehaviour {
 		if (collision.gameObject.tag == "ground") jumping 			= true;
 		if (collision.gameObject.tag == "Event Trap") {
 			eventWrapper 	= false;
-			timerStart		= false;
 			ScoreActions.contador += scoreTime;
+			Debug.Log ("Aumentou Score em: " + scoreTime);
+			timerStart		= false;
 			timer = 0;
 			scoreTime = 0;
 		}
