@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectScore:
-  - {fileID: 1347166970809204, guid: c3c5a33c1f9b2e645be0d13a8ec57cca, type: 2}
+  - {fileID: 1366972464872274, guid: c3c5a33c1f9b2e645be0d13a8ec57cca, type: 2}
   spawnTime: 0
   spawnPoint: {x: 0, y: 0, z: 0}
   spawnTimer: 0
