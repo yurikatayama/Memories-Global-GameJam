@@ -113,17 +113,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1099137129
+--- !u!1 &1083638787
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1099137132}
-  - component: {fileID: 1099137131}
-  - component: {fileID: 1099137130}
-  - component: {fileID: 1099137133}
+  - component: {fileID: 1083638790}
+  - component: {fileID: 1083638789}
+  - component: {fileID: 1083638788}
+  - component: {fileID: 1083638791}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -131,19 +131,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1099137130
+--- !u!81 &1083638788
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1099137129}
+  m_GameObject: {fileID: 1083638787}
   m_Enabled: 1
---- !u!20 &1099137131
+--- !u!20 &1083638789
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1099137129}
+  m_GameObject: {fileID: 1083638787}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -178,12 +178,12 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!4 &1099137132
+--- !u!4 &1083638790
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1099137129}
+  m_GameObject: {fileID: 1083638787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -191,18 +191,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1099137133
+--- !u!114 &1083638791
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1099137129}
+  m_GameObject: {fileID: 1083638787}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbcd11c7e417e314ab3ca3d9910a8a02, type: 3}
+  m_Script: {fileID: 11500000, guid: f9a11aae60b8fd0488f0ceb562d7be79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &1386241023
+--- !u!1001 &1330770793
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -211,11 +211,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4103144077845950, guid: 616533bc38a10d84294eb6a9fea3f356, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.045
+      value: 0.049387515
       objectReference: {fileID: 0}
     - target: {fileID: 4103144077845950, guid: 616533bc38a10d84294eb6a9fea3f356, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.012
+      value: -0.026826411
       objectReference: {fileID: 0}
     - target: {fileID: 4103144077845950, guid: 616533bc38a10d84294eb6a9fea3f356, type: 2}
       propertyPath: m_LocalPosition.z
