@@ -33,7 +33,7 @@ public class PlayerCharacter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//	Time.timeScale = age;
+		Time.timeScale = age;
 
         vert = Input.GetAxisRaw("Vertical");
         hori = Input.GetAxis("Horizontal");
@@ -97,7 +97,7 @@ public class PlayerCharacter : MonoBehaviour {
             SetPlayerCharacter(4f, 3.5f, 0.5f);
         }
 		if (age == 4) {
-            SetPlayerCharacter(5f, 4f, 0.25f);
+            SetPlayerCharacter(8f, 3.5f, 0.25f);
 		}
 	}
 
