@@ -14,20 +14,18 @@ public class PlayerCharacter : MonoBehaviour {
 
 	private bool jumping = true;
 	private bool isPombos = false;
+	private GameObject gameObj;
 
 	private float infarto;
 	private float stress;
 
 	float vert;
 	float hori;
-
-	Pombos pombo;
 	
 	// private float miopia;
 
 	// Use this for initialization
 	void Start () {
-
 		rb = GetComponent<Rigidbody2D>();
 		age = 3;
 		infarto = 0.5f;
@@ -47,17 +45,17 @@ public class PlayerCharacter : MonoBehaviour {
     }
 
 	void FixedUpdate() {
-        if(!jumping && !isPombos) {
-			rb.velocity = new Vector2(hori * speed, vert * jump);
-		}
+        if(!jumping && !isPombos) rb.velocity = new Vector2(hori * speed, vert * jump);
 		if (isPombos) {
 			rb.velocity = new Vector2(0, 0);
-			Debug.Log("Pombo");
+			if (PlayerActions.contador == 3) {
+				Destroy(gameObj);
+				setPombosConditions(false, false, 0);
+			}
 		}
 		
 
 		if (stress <= infarto) {
-			//morreu
 			Debug.Log("Infarto Fulminante");
 			stress = 0;
 			infarto = 0;
@@ -66,9 +64,6 @@ public class PlayerCharacter : MonoBehaviour {
 			stress = Random.Range (30f, 100f);
 			infarto += 1 * Time.deltaTime;
 		}
-
-		
-		Debug.Log ("Strees: " + stress + "\nInfarto: " + infarto);
 	}
 
 
@@ -107,18 +102,14 @@ public class PlayerCharacter : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.gameObject.tag == "pombos") {
-			isPombos = true;
-			PlayerActions.contador = 0;
-			PlayerActions.alimentarPombos = true;
-			pombo = new Pombos();
+			gameObj = collision.gameObject;
+			setPombosConditions(true, true, 0);
 		}
 	}
 
-	private void OnTriggerExit2D(Collider2D collision) {
-		if (collision.gameObject.tag == "pombos") {
-			isPombos = false;
-			PlayerActions.alimentarPombos = false;
-			Destroy(pombo);
-		}
+	void setPombosConditions(bool isP, bool almP, int cont) {
+		isPombos = isP;
+		PlayerActions.alimentarPombos = almP;
+		PlayerActions.contador = cont;
 	}
 }
