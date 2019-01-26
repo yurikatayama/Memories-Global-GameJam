@@ -72,8 +72,10 @@ public class PlayerCharacter : MonoBehaviour {
 			PlayerActions.gameOverCond = true;
 			Invoke ("GameOverCondition", 4);
 		} else {
-			stress = Random.Range (30f, 140f);
-			infarto += 0.05f * Time.deltaTime;
+			stress = Random.Range (50f, 200f);
+			if (infarto > 70) {
+				infarto += 0.05f * Time.deltaTime;
+			}
 		}
 
 		if (Input.GetKeyDown(KeyCode.O) && age <= 4) {
