@@ -36,22 +36,19 @@ public class PlayerCharacter : MonoBehaviour {
 		speed *= speedMultiplyer;
 		jump *= jumpMultiplyer;
 
-		
-		if (jumping == true) {
-			vert = 0;
-			Debug.Log ("Voando");
-		} else {
-			vert = Input.GetAxisRaw("Vertical");
-			Debug.Log ("Pulou");
-			jumping = true;
-		}
-		hori = Input.GetAxisRaw("Horizontal");
+        vert = Input.GetAxisRaw("Vertical");
+        hori = Input.GetAxisRaw("Horizontal");
 
 	}
 
 	void FixedUpdate() {
 
-		rb.velocity = new Vector2(hori * speed, vert * jump);
+        if (Input.GetKeyDown(KeyCode.UpArrow) && jumping) {
+            rb.AddForce(new Vector2(0, jump), ForceMode2D.Impulse);
+        } else if(!jumping)
+        {
+            rb.velocity = new Vector2(hori * speed, vert * jump);
+        }
 		
 	}
 
@@ -80,14 +77,12 @@ public class PlayerCharacter : MonoBehaviour {
     }
 
 	void OnCollisionEnter2D(Collision2D collision) {
-		
-		if (collision.gameObject.tag == "ground") {
-			jumping = false;
-		}
-	}
+        if (collision.gameObject.tag == "ground") {
+            jumping = false;
+        }
+    }
 
 	void OnCollisionExit2D(Collision2D collision) {
-		
 		if (collision.gameObject.tag == "ground") {
 			jumping = true;
 		}
