@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventSpawner : MonoBehaviour {
+public class ArvoreSpawner : MonoBehaviour {
 
-	public GameObject [] objectsEvent;
+
+	public GameObject [] objectsArvore;
 	public float spawnTime;
 	public Vector3 spawnPoint;
 	public float spawnTimer = 0;
@@ -31,6 +32,6 @@ public class EventSpawner : MonoBehaviour {
      {
          spawnPoint.x = 11;
          spawnPoint.y = -1;
-         Instantiate(objectsEvent[Random.Range(0, objectsEvent.Length - 1)], spawnPoint, Quaternion.identity);
+         Instantiate(objectsArvore[Random.Range(0, objectsArvore.Length - 1)], spawnPoint, Quaternion.identity);
      }
 }
