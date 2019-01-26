@@ -12,6 +12,8 @@ public class PlayerCharacter : MonoBehaviour {
 	public float speed;
 	public float jump;
 
+	private float moveLeft;
+
 	private bool jumping 		= true;
 	private bool eventWrapper 	= false;
 	private GameObject gameObj;
@@ -30,6 +32,7 @@ public class PlayerCharacter : MonoBehaviour {
 		age = 3;
 		infarto = 0.5f;
 		stress = 10;
+		moveLeft = 0.5f;
 	}
 	
 	// Update is called once per frame
@@ -68,6 +71,8 @@ public class PlayerCharacter : MonoBehaviour {
 			stress = Random.Range (30f, 100f);
 			infarto += 1 * Time.deltaTime;
 		}
+
+		transform.Translate (-moveLeft * Time.deltaTime, 0, 0);
 	}
 
 
