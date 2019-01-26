@@ -59,28 +59,25 @@ public class PlayerCharacter : MonoBehaviour {
 	void AgeChanger (float playerAge) {
 		
 		if (age == 1) {
-			speedMultiplyer = 1.5f;
-			jumpMultiplyer = 0;
-			details = 1;
-		}
+            SetPlayerCharacter(1.5f, 0, 1);
+        }
 		if (age == 2) {
-			speedMultiplyer = 0.8f;
-			jumpMultiplyer = 0.8f;
-			details = 0.75f;
-		}
+            SetPlayerCharacter(0.8f, 0.8f, 0.75f);
+        }
 		if (age == 3) {
-			speedMultiplyer = 1f;
-			jumpMultiplyer = 1;
-			details = 0.5f;
-
-		}
+            SetPlayerCharacter(1f, 1f, 0.5f);
+        }
 		if (age == 4) {
-			speedMultiplyer = 1.5f;
-			jumpMultiplyer = 1.5f;
-			details = 0.25f;
+            SetPlayerCharacter(1.5f, 1.5f, 0.25f);
 		}
 
 	}
+
+    void SetPlayerCharacter(float speedAux, float jumpAux, float detailsAux){
+        speedMultiplyer = speedAux;
+        jumpMultiplyer = jumpAux;
+        details = detailsAux;
+    }
 
 	void OnCollisionEnter2D(Collision2D collision) {
 		
