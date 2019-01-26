@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EventBehavior : MonoBehaviour {
 
-	private float speed;
+	public float speed;
 
 
 	// Use this for initialization
@@ -15,9 +15,10 @@ public class EventBehavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		transform.Translate (-speed * Time.deltaTime, 0, 0);
+		transform.Translate (-speed * Time.deltaTime, 0, 0);	
+
 		if (transform.position.x <= -15) {
-			Destroy(this);
+			Destroy (this);
 		}
 	}
 }

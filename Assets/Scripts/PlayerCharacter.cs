@@ -85,7 +85,7 @@ public class PlayerCharacter : MonoBehaviour {
 		
 		Time.timeScale = playerAge * 1.5f;
 		if (age == 1) {
-            SetPlayerCharacter(2f, 0, 1);
+            SetPlayerCharacter(2f, 1f, 1);
         }
 		if (age == 2) {
             SetPlayerCharacter(3f, 3f, 0.75f);
