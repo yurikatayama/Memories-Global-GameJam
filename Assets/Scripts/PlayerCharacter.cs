@@ -72,7 +72,7 @@ public class PlayerCharacter : MonoBehaviour {
 			infarto = 0;
 			Time.timeScale = 0;
 		} else {
-			stress = Random.Range (20f, 120f);
+			stress = Random.Range (30f, 120f);
 			infarto += 0.5f * Time.deltaTime;
 		}
 
@@ -91,7 +91,7 @@ public class PlayerCharacter : MonoBehaviour {
 
 	void AgeChanger (float playerAge) {
 		
-		Time.timeScale = playerAge;
+		Time.timeScale = playerAge * 2;
 		if (age == 1) {
             SetPlayerCharacter(2f, 0, 1);
         }
