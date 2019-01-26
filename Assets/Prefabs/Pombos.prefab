@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114820149937407836}
   - component: {fileID: 50221252473154716}
   - component: {fileID: 61655603668122002}
+  - component: {fileID: 114660307427887350}
   m_Layer: 0
   m_Name: Pombos
   m_TagString: Event Trap
@@ -88,6 +89,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.35}
   m_EdgeRadius: 0
+--- !u!114 &114660307427887350
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1710067002018064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8da64bf1e83204981b24c67e028d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114820149937407836
 MonoBehaviour:
   m_ObjectHideFlags: 1

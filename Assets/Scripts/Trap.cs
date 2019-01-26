@@ -1,24 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Score : MonoBehaviour {
+public class Trap : MonoBehaviour {
 
-	Text score;
+	// Use this for initialization
 	void Start () {
-		score = GetComponent<Text>();
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		score.text = "Score: " + ScoreActions.contador;
+		
 	}
 
 	private void OnTriggerEnter2D(Collider2D collider) {
-		if (collider.gameObject.tag == "Event Trap") {
-			Destroy(this);
-		}
 		if (collider.gameObject.tag == "Score") {
 			Destroy(collider.gameObject);
 		}
