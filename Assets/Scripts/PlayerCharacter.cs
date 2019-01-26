@@ -109,7 +109,7 @@ public class PlayerCharacter : MonoBehaviour {
 
 	void setPombosConditions(bool isP, bool almP, int cont) {
 		isPombos = isP;
-		PlayerActions.alimentarPombos = almP;
+		PlayerActions.boolPombos = almP;
 		PlayerActions.contador = cont;
 	}
 }
