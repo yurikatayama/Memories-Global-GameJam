@@ -13,6 +13,7 @@ public static class PlayerActions {
 
 	public static float timer 				= 0;
 	public static int 	contador 			= 0;
+	public static int	maxEventCount		= 6;
 	public static bool 	eventCollider 		= true;
 
 	/*
@@ -26,7 +27,7 @@ public static class PlayerActions {
 	public static bool 
 	*/
 
-	public static void ContarPombos () {
+	public static void ContadorEvento () {
 		if (Input.GetKeyDown(KeyCode.Space) && boolPombos) {
 			contador++;
 		}

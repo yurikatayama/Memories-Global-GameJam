@@ -12,8 +12,8 @@ public class PlayerCharacter : MonoBehaviour {
 	public float speed;
 	public float jump;
 
-	private bool jumping = true;
-	private bool isPombos = false;
+	private bool jumping 		= true;
+	private bool eventWrapper 	= false;
 	private GameObject gameObj;
 
 	private float infarto;
@@ -43,14 +43,16 @@ public class PlayerCharacter : MonoBehaviour {
         vert = Input.GetAxisRaw("Vertical");
         hori = Input.GetAxisRaw("Horizontal");
 
-		PlayerActions.ContarPombos();
+		PlayerActions.ContadorEvento();
     }
 
 	void FixedUpdate() {
-        if(!jumping && !isPombos) rb.velocity = new Vector2(hori * speed, vert * jump);
-		if (isPombos) {
+        if(!jumping && !eventWrapper) {
+			rb.velocity = new Vector2(hori * speed, vert * jump);
+		}
+		if (eventWrapper) {
 			rb.velocity = new Vector2(0, 0);
-			if (PlayerActions.contador == 3) {
+			if (PlayerActions.contador == PlayerActions.maxEventCount) {
 				Destroy(gameObj);
 				setPombosConditions(false, false, 0);
 			}
@@ -98,19 +100,19 @@ public class PlayerCharacter : MonoBehaviour {
 
 	void OnCollisionExit2D(Collision2D collision) {
 		if (collision.gameObject.tag == "ground") jumping = true;
-		if (collision.gameObject.tag == "pombos") isPombos = false;
+		if (collision.gameObject.tag == "Event Trap") eventWrapper = false;
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision) {
-		if (collision.gameObject.tag == "pombos") {
+		if (collision.gameObject.tag == "Event Trap") {
 			gameObj = collision.gameObject;
 			setPombosConditions(true, true, 0);
 		}
 	}
 
-	void setPombosConditions(bool isP, bool almP, int cont) {
-		isPombos = isP;
-		PlayerActions.boolPombos = almP;
-		PlayerActions.contador = cont;
+	void setPombosConditions(bool evWrp, bool boolPombos, int resetCounter) {
+		eventWrapper 				= evWrp;
+		PlayerActions.boolPombos 	= boolPombos;
+		PlayerActions.contador	 	= resetCounter;
 	}
 }
