@@ -367,13 +367,10 @@ Prefab:
     - target: {fileID: 4839988144603664, guid: cca07538aeb39304bb74654d76ad729f, type: 2}
       propertyPath: m_RootOrder
       value: 2
-<<<<<<< HEAD
       objectReference: {fileID: 0}
     - target: {fileID: 1710067002018064, guid: cca07538aeb39304bb74654d76ad729f, type: 2}
       propertyPath: m_TagString
       value: Event Trap
-=======
->>>>>>> parent of d5d5257... commiteeeeeee
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114820149937407836, guid: cca07538aeb39304bb74654d76ad729f, type: 2}
