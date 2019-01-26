@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212883067078651430}
   - component: {fileID: 61178939409063250}
   - component: {fileID: 114785009493272800}
-  - component: {fileID: 114378422937605696}
+  - component: {fileID: 114690315097952030}
   m_Layer: 0
   m_Name: diploma
   m_TagString: Fases da Vida
@@ -68,7 +68,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.11, y: 33.77768}
   m_EdgeRadius: 0
---- !u!114 &114378422937605696
+--- !u!114 &114690315097952030
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1469607633293400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 815f19b9094a84642b421c438cdf5269, type: 3}
+  m_Script: {fileID: 11500000, guid: 4251b5789f793924f9022f5b14d3b64d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114785009493272800
