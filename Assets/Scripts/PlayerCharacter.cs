@@ -9,9 +9,6 @@ public class PlayerCharacter : MonoBehaviour {
 	private float speedMultiplyer;
 	private float details;
 	private Rigidbody2D rb;
-
-	private float initialSpeed;
-	private float initialJump;
 	public float speed;
 	public float jump;
 
@@ -36,15 +33,15 @@ public class PlayerCharacter : MonoBehaviour {
 		infarto = 0.5f;
 		stress = 10;
 		moveLeft = 0.5f;
-		speed = initialSpeed = 1;
-		jump = initialJump = 5;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		
-		//	Time.timeScale = age;
+		AgeChanger (age);
+		Time.timeScale = age;
+		speed *= speedMultiplyer;
+		jump *= jumpMultiplyer;
 
         vert = Input.GetAxis("Vertical");
         hori = Input.GetAxis("Horizontal");
@@ -65,24 +62,23 @@ public class PlayerCharacter : MonoBehaviour {
 			}
 		}
 		
+
 		if (stress <= infarto) {
 			Debug.Log("Infarto Fulminante");
 			stress = 0;
 			infarto = 0;
 			Time.timeScale = 0;
 		} else {
-			stress = Random.Range (20f, 120f);
+			stress = Random.Range (1f, 100f);
 			infarto += 0.5f * Time.deltaTime;
 		}
 
 		if (Input.GetKeyDown(KeyCode.O) && age < 4) {
 			age++;
-			AgeChanger (age);
 			Debug.Log ("Age: " + age);
 		}
 		if (Input.GetKeyDown(KeyCode.P) && age > 1) {
 			age--;
-			AgeChanger (age);
 			Debug.Log ("Age: " + age);
 		}
 	}
@@ -90,18 +86,18 @@ public class PlayerCharacter : MonoBehaviour {
 
 	void AgeChanger (float playerAge) {
 		
-		Time.timeScale = playerAge;
+		Time.timeScale = age;
 		if (age == 1) {
-            SetPlayerCharacter(2f, 0, 1);
+            SetPlayerCharacter(1f, 0, 1);
         }
 		if (age == 2) {
-            SetPlayerCharacter(3f, 3f, 0.75f);
+            SetPlayerCharacter(1f, 1f, 0.75f);
         }
 		if (age == 3) {
-            SetPlayerCharacter(4f, 3.5f, 0.5f);
+            SetPlayerCharacter(1f, 1f, 0.5f);
         }
 		if (age == 4) {
-            SetPlayerCharacter(5f, 4f, 0.25f);
+            SetPlayerCharacter(1f, 1f, 0.25f);
 		}
 	}
 
@@ -109,9 +105,6 @@ public class PlayerCharacter : MonoBehaviour {
         speedMultiplyer = speedAux;
         jumpMultiplyer 	= jumpAux;
         details 		= detailsAux;
-		
-		speed			= initialSpeed * speedMultiplyer;
-		jump 			= initialJump * jumpMultiplyer;
     }
 
 	void OnCollisionEnter2D(Collision2D collision) {
@@ -134,6 +127,5 @@ public class PlayerCharacter : MonoBehaviour {
 		eventWrapper 				= evWrp;
 		PlayerActions.boolPombos 	= boolPombos;
 		PlayerActions.contador	 	= resetCounter;
-		
 	}
 }
