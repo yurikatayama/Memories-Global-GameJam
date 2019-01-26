@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DiplomaSpawner : MonoBehaviour {
+public class GuitarraSpawner : MonoBehaviour {
 
 	public GameObject [] objectDiploma;
 	public float spawnTime;
@@ -10,7 +10,7 @@ public class DiplomaSpawner : MonoBehaviour {
 	public float spawnTimer = 0;
 	// Use this for initialization
 	void Start () {
-		spawnTime = 96f * 2;
+		spawnTime = 192f * 2;
 	}
 	// Update is called once per frame
 	void FixedUpdate () {
