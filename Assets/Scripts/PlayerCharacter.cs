@@ -43,10 +43,7 @@ public class PlayerCharacter : MonoBehaviour {
 
 	void FixedUpdate() {
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && jumping) {
-            rb.AddForce(new Vector2(0, jump), ForceMode2D.Impulse);
-        } else if(!jumping)
-        {
+        if(!jumping) {
             rb.velocity = new Vector2(hori * speed, vert * jump);
         }
 		
