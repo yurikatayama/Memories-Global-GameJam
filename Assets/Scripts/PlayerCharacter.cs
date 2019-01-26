@@ -74,8 +74,8 @@ public class PlayerCharacter : MonoBehaviour {
 
     void SetPlayerCharacter(float speedAux, float jumpAux, float detailsAux){
         speedMultiplyer = speedAux;
-        jumpMultiplyer = jumpAux;
-        details = detailsAux;
+        jumpMultiplyer 	= jumpAux;
+        details 		= detailsAux;
     }
 
 	void OnCollisionEnter2D(Collision2D collision) {
