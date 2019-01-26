@@ -33,7 +33,6 @@ public class PlayerCharacter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Time.timeScale = age;
 
         vert = Input.GetAxisRaw("Vertical");
         hori = Input.GetAxis("Horizontal");
@@ -128,6 +127,7 @@ public class PlayerCharacter : MonoBehaviour {
 			ScoreActions.ContadorEvento();
 			Destroy(collision.gameObject);
 		}
+		
 		if (collision.gameObject.tag == "Fases da Vida") {
 			if (contadorFasesDavida == 0 && verificaFasesDaVida()) {
 				age = 2;

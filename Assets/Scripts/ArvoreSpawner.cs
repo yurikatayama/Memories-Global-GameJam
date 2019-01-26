@@ -29,7 +29,7 @@ public class ArvoreSpawner : MonoBehaviour {
 
 	void Spawn ()
      {
-         spawnPoint.x = 11;
+         spawnPoint.x = 15;
          spawnPoint.y = Random.Range(-2, 0);
          Instantiate(objectsArvore[Random.Range(0, objectsArvore.Length - 1)], spawnPoint, Quaternion.identity);
      }
