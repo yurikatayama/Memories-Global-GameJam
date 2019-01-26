@@ -10,7 +10,7 @@ public class EsposaSpawner : MonoBehaviour {
 	public float spawnTimer = 0;
 	// Use this for initialization
 	void Start () {
-		spawnTime = 5f;
+		spawnTime = 36f;
 	}
 	// Update is called once per frame
 	void FixedUpdate () {

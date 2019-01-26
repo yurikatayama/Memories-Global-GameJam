@@ -10,13 +10,9 @@ public class PlayerCharacter : MonoBehaviour {
 				  canJump = 0f;
 	float vert, hori;
 	private Rigidbody2D rb;
-
-	private bool timerStart = false;
-	private float timer = 0;
-	private int scoreTime;
-
 	private bool jumping 		= true;
 	private bool eventWrapper 	= false;
+	private bool esposa = false, diploma = false, guitarra = false, mae = false;
 	private GameObject gameObj;
 	
 	// private float miopia;
@@ -38,18 +34,12 @@ public class PlayerCharacter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//	Time.timeScale = age;
+
         vert = Input.GetAxisRaw("Vertical");
         hori = Input.GetAxis("Horizontal");
 
 		PlayerActions.ContadorEvento();
 		transform.Translate (-moveLeft * Time.deltaTime, 0, 0);
-
-		
-		if (timerStart) {
-			timer -= 1 * Time.deltaTime;
-			scoreTime = (int) timer;
-		}
-
     }
 
 	void FixedUpdate() {
@@ -126,42 +116,37 @@ public class PlayerCharacter : MonoBehaviour {
 
 	void OnCollisionExit2D(Collision2D collision) {
 		if (collision.gameObject.tag == "ground") jumping 			= true;
-		if (collision.gameObject.tag == "Event Trap") {
-			eventWrapper 	= false;
-			ScoreActions.contador += scoreTime;
-			Debug.Log ("Aumentou Score em: " + scoreTime);
-			timerStart		= false;
-			timer = 0;
-			scoreTime = 0;
-		}
+		if (collision.gameObject.tag == "Event Trap") eventWrapper 	= false;
 	}
-
 
 	private void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.gameObject.tag == "Event Trap") {
 			gameObj = collision.gameObject;
 			setPombosConditions(true, true, 0);
-			timerStart = true;
-
 		}
 		if (collision.gameObject.tag == "Score") {
 			ScoreActions.ContadorEvento();
 			Destroy(collision.gameObject);
 		}
 		if (collision.gameObject.tag == "Fases da Vida") {
-			if (contadorFasesDavida == 0) {
+			if (contadorFasesDavida == 0 && verificaFasesDaVida()) {
 				age = 2;
+				esposa = true;
 				Debug.Log("esposa");
-			} else if (contadorFasesDavida == 1) {
+			} else if (contadorFasesDavida == 1 && verificaFasesDaVida()) {
 				age = 3;
+				diploma = true;
 				Debug.Log("diploma");
-			} else if (contadorFasesDavida == 2) {
+			} else if (contadorFasesDavida == 2 && verificaFasesDaVida()) {
 				age = 4;
+				guitarra = true;
 				Debug.Log("guitarra");
-			} else if (contadorFasesDavida == 3) {
+			} else if (contadorFasesDavida == 3 && verificaFasesDaVida()) {
+				mae = true;
 				Debug.Log("mae");
 			}
 			contadorFasesDavida++;
+			collision.gameObject.tag = "Untagged";
 		}
 	}
 
@@ -169,6 +154,18 @@ public class PlayerCharacter : MonoBehaviour {
 		eventWrapper 				= evWrp;
 		PlayerActions.boolPombos 	= boolPombos;
 		PlayerActions.contador	 	= resetCounter;
-		
+	}
+
+	bool verificaFasesDaVida() {
+		if (age == 1) {
+			return !esposa && !diploma && !guitarra && !mae;
+		}else if (age == 2) {
+			return esposa && !diploma && !guitarra && !mae;
+		}else if (age == 3) {
+			return esposa && diploma && !guitarra && !mae;
+		}else if (age == 4) {
+			return esposa && diploma && guitarra && !mae;
+		}
+		return mae;
 	}
 }
