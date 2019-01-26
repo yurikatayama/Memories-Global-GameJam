@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour {
 
-	private int age;
+	private int age, contadorFasesDavida;
 	private float jumpMultiplyer, speedMultiplyer, details, initialSpeed,
 				  initialJump, speed, jump, moveLeft, infarto, stress,
 				  canJump = 0f;
 	float vert, hori;
 	private Rigidbody2D rb;
+
+	private bool timerStart = false;
+	private float timer = 0;
+	private int scoreTime;
+
 	private bool jumping 		= true;
 	private bool eventWrapper 	= false;
 	private GameObject gameObj;
@@ -27,20 +32,28 @@ public class PlayerCharacter : MonoBehaviour {
 		jump = initialJump = 5;
 		AgeChanger (1);
 		ScoreActions.ResetaContador();
+		contadorFasesDavida = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		//	Time.timeScale = age;
-
         vert = Input.GetAxisRaw("Vertical");
         hori = Input.GetAxis("Horizontal");
 
 		PlayerActions.ContadorEvento();
 		transform.Translate (-moveLeft * Time.deltaTime, 0, 0);
+
+		
+		if (timerStart) {
+			timer -= 1 * Time.deltaTime;
+			scoreTime = (int) timer;
+		}
+
     }
 
 	void FixedUpdate() {
+		AgeChanger (age);
         if(!jumping && !eventWrapper) {
 			if (Time.time > canJump) {
 				rb.velocity = new Vector2(hori * speed, vert * jump);
@@ -113,17 +126,42 @@ public class PlayerCharacter : MonoBehaviour {
 
 	void OnCollisionExit2D(Collision2D collision) {
 		if (collision.gameObject.tag == "ground") jumping 			= true;
-		if (collision.gameObject.tag == "Event Trap") eventWrapper 	= false;
+		if (collision.gameObject.tag == "Event Trap") {
+			eventWrapper 	= false;
+			ScoreActions.contador += scoreTime;
+			Debug.Log ("Aumentou Score em: " + scoreTime);
+			timerStart		= false;
+			timer = 0;
+			scoreTime = 0;
+		}
 	}
+
 
 	private void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.gameObject.tag == "Event Trap") {
 			gameObj = collision.gameObject;
 			setPombosConditions(true, true, 0);
+			timerStart = true;
+
 		}
 		if (collision.gameObject.tag == "Score") {
 			ScoreActions.ContadorEvento();
 			Destroy(collision.gameObject);
+		}
+		if (collision.gameObject.tag == "Fases da Vida") {
+			if (contadorFasesDavida == 0) {
+				age = 2;
+				Debug.Log("esposa");
+			} else if (contadorFasesDavida == 1) {
+				age = 3;
+				Debug.Log("diploma");
+			} else if (contadorFasesDavida == 2) {
+				age = 4;
+				Debug.Log("guitarra");
+			} else if (contadorFasesDavida == 3) {
+				Debug.Log("mae");
+			}
+			contadorFasesDavida++;
 		}
 	}
 

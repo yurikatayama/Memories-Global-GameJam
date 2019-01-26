@@ -8,6 +8,7 @@ TagManager:
   - Event Trap
   - Game Over
   - Score
+  - Fases da Vida
   layers:
   - Default
   - TransparentFX
