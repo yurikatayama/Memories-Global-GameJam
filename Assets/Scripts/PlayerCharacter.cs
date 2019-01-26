@@ -15,21 +15,23 @@ public class PlayerCharacter : MonoBehaviour {
 	private bool jumping = true;
 	private bool isPombos = false;
 
+	private float infarto;
+	private float stress;
+
 	float vert;
 	float hori;
 
 	Pombos pombo;
-	//GameObject gameObj;
 	
 	// private float miopia;
-	// private float stress;
 
 	// Use this for initialization
 	void Start () {
 
 		rb = GetComponent<Rigidbody2D>();
 		age = 3;
-
+		infarto = 0.5f;
+		stress = 10;
 	}
 	
 	// Update is called once per frame
@@ -42,21 +44,37 @@ public class PlayerCharacter : MonoBehaviour {
 
         vert = Input.GetAxisRaw("Vertical");
         hori = Input.GetAxisRaw("Horizontal");
-
     }
 
 	void FixedUpdate() {
-        if(!jumping && !isPombos) rb.velocity = new Vector2(hori * speed, vert * jump);
-
+        if(!jumping && !isPombos) {
+			rb.velocity = new Vector2(hori * speed, vert * jump);
+		}
 		if (isPombos) {
 			rb.velocity = new Vector2(0, 0);
 			Debug.Log("Pombo");
 		}
+		
+
+		if (stress <= infarto) {
+			//morreu
+			Debug.Log("Infarto Fulminante");
+			stress = 0;
+			infarto = 0;
+			Time.timeScale = 0;
+		} else {
+			stress = Random.Range (30f, 100f);
+			infarto += 1 * Time.deltaTime;
+		}
+
+		
+		Debug.Log ("Strees: " + stress + "\nInfarto: " + infarto);
 	}
 
 
 	void AgeChanger (float playerAge) {
 		
+		Time.timeScale = age;
 		if (age == 1) {
             SetPlayerCharacter(1.5f, 0, 1);
         }
