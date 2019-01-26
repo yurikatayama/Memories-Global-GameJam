@@ -13,9 +13,13 @@ public class PlayerCharacter : MonoBehaviour {
 	public float jump;
 
 	private bool jumping = true;
+	private bool isPombos = false;
 
 	float vert;
 	float hori;
+
+	Pombos pombo;
+	//GameObject gameObj;
 	
 	// private float miopia;
 	// private float stress;
@@ -42,7 +46,12 @@ public class PlayerCharacter : MonoBehaviour {
     }
 
 	void FixedUpdate() {
-        if(!jumping) rb.velocity = new Vector2(hori * speed, vert * jump);
+        if(!jumping && !isPombos) rb.velocity = new Vector2(hori * speed, vert * jump);
+
+		if (isPombos) {
+			rb.velocity = new Vector2(0, 0);
+			Debug.Log("Pombo");
+		}
 	}
 
 
@@ -75,5 +84,23 @@ public class PlayerCharacter : MonoBehaviour {
 
 	void OnCollisionExit2D(Collision2D collision) {
 		if (collision.gameObject.tag == "ground") jumping = true;
+		if (collision.gameObject.tag == "pombos") isPombos = false;
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision) {
+		if (collision.gameObject.tag == "pombos") {
+			isPombos = true;
+			PlayerActions.contador = 0;
+			PlayerActions.alimentarPombos = true;
+			pombo = new Pombos();
+		}
+	}
+
+	private void OnTriggerExit2D(Collider2D collision) {
+		if (collision.gameObject.tag == "pombos") {
+			isPombos = false;
+			PlayerActions.alimentarPombos = false;
+			Destroy(pombo);
+		}
 	}
 }

@@ -23,7 +23,7 @@ public static class PlayerActions {
 	*/
 
 	public static void ContarPombos () {
-		if (Input.GetKeyDown(KeyCode.Space)) {
+		if (Input.GetKeyDown(KeyCode.Space) && alimentarPombos) {
 			contador++;
 		}
 	}
