@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class NuvemSpawner : MonoBehaviour {
 
-
 	public GameObject [] objectsNuvem;
 	public float spawnTime;
 	public Vector3 spawnPoint;
@@ -12,7 +11,7 @@ public class NuvemSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		spawnTime = 12f;
+		spawnTime = Random.Range(3,9);
 	}
 	
 	void FixedUpdate () {

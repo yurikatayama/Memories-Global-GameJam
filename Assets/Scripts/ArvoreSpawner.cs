@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ArvoreSpawner : MonoBehaviour {
 
-
 	public GameObject [] objectsArvore;
 	public float spawnTime;
 	public Vector3 spawnPoint;
