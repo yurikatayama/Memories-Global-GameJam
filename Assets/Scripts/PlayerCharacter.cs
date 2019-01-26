@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCharacter : MonoBehaviour {
 
@@ -65,9 +66,11 @@ public class PlayerCharacter : MonoBehaviour {
 			stress = 0;
 			infarto = 0;
 			Time.timeScale = 0;
+			Invoke ("GameOverCondition", 4);
+			//GameOverCondition(3);
 		} else {
 			stress = Random.Range (30f, 120f);
-			infarto += 0.1f * Time.deltaTime;
+			infarto += 3.1f * Time.deltaTime;
 		}
 
 		if (Input.GetKeyDown(KeyCode.O) && age < 4) {
@@ -80,6 +83,10 @@ public class PlayerCharacter : MonoBehaviour {
 			AgeChanger (age);
 			Debug.Log ("Age: " + age);
 		}
+	}
+
+	void GameOverCondition () {
+			SceneManager.LoadScene(2);
 	}
 
 
