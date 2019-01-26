@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ground
   - pombos
+  - Event Trap
   layers:
   - Default
   - TransparentFX
