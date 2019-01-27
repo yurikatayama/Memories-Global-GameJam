@@ -12,7 +12,8 @@ public class Mae : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D collider) {
 		if (collider.gameObject.tag == "Player") {
-            Invoke("chamaCreditos", 4);
+            Time.timeScale = 1;
+            Invoke("chamaCreditos", 8);
         }
 	}
 
