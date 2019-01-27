@@ -8,7 +8,6 @@ public class Score : MonoBehaviour {
 	Text score;
 	void Start () {
 		score = GetComponent<Text>();
-		ScoreActions.contador = 0;
 	}
 	
 	// Update is called once per frame

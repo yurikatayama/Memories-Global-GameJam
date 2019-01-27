@@ -74,13 +74,13 @@ public class PlayerCharacter : MonoBehaviour {
 	}
 
 	void OnTriggerExit2D(Collider2D other) {
-		if (other.gameObject.tag == "Event Trap" && !superPlayer) {
+		if (other.gameObject.tag == "Event Trap") {
 			ChangeAnimator (true, false, false, age);
 		}
 	}
 
 	void OnTriggerEnter2D(Collider2D collision) {
-		if (collision.gameObject.tag == "Event Trap" && !superPlayer) {
+		if (collision.gameObject.tag == "Event Trap") {
 			gameObj = collision.gameObject;
 			setPombosConditions(true, true, 0);
 			ChangeAnimator (false, true, false, age);
