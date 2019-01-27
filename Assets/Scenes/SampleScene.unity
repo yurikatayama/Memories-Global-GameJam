@@ -635,6 +635,7 @@ MonoBehaviour:
   - {fileID: 1062744313203626, guid: 47b5af41cf9d6be46ac890a8c0b9a6f2, type: 2}
   - {fileID: 1710067002018064, guid: cca07538aeb39304bb74654d76ad729f, type: 2}
   - {fileID: 1666800884506104, guid: 64f76085dacc0ee4a8225ac95f4c289c, type: 2}
+  - {fileID: 1676978905072984, guid: 8eedcd0c90d4ae841be470f68725e9ce, type: 2}
   spawnTime: 0
   spawnPoint: {x: 0, y: 0, z: 0}
   spawnTimer: 0
