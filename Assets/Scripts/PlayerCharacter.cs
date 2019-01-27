@@ -56,7 +56,11 @@ public class PlayerCharacter : MonoBehaviour {
 			if (PlayerActions.gameOverCond) moveLeft = 0;
 			
 			verificaInfarto();
-		} else rb.velocity = velocidade(0, 0);
+		} else {
+			rb.velocity = velocidade(0, 0);
+			setAudioPlayer(false, false, false, false, true);
+			ChangeAnimator(false, false, true, age);
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D collision) {
@@ -136,6 +140,7 @@ public class PlayerCharacter : MonoBehaviour {
 				stress = 0;
 				infarto = 0;
 				PlayerActions.gameOverCond = true;
+				setAudioPlayer(false, false, false, false, true);
 				Invoke ("GameOverCondition", 4);
 			} else {
 				stress = Random.Range (0f, 1000000f);
@@ -171,22 +176,23 @@ public class PlayerCharacter : MonoBehaviour {
 		}
 	}
 
-	private void setAudioPlayer(bool pri, bool sec, bool ter, bool tet) {
+	private void setAudioPlayer(bool pri, bool duo, bool tri, bool tet, bool pen) {
 		Sound[0].SetActive(pri);
-		Sound[1].SetActive(sec);
-		Sound[2].SetActive(ter);
+		Sound[1].SetActive(duo);
+		Sound[2].SetActive(tri);
 		Sound[3].SetActive(tet);
+		Sound[4].SetActive(pen);
 	}
 
 	private void setFaseDaVida() {
 		if (contadorFasesDavida == 0 && verificaFasesDaVida()) {
-			setAudioPlayer(false, true, false, false);
+			setAudioPlayer(false, true, false, false, false);
 			setIdadeDaVida(2);
 		} else if (contadorFasesDavida == 1 && verificaFasesDaVida()) {
-			setAudioPlayer(false, false, true, false);
+			setAudioPlayer(false, false, true, false, false);
 			setIdadeDaVida(3);
 		} else if (contadorFasesDavida == 2 && verificaFasesDaVida()) {
-			setAudioPlayer(false, false, false, true);
+			setAudioPlayer(false, false, false, true, false);
 			setIdadeDaVida(4);
 		} else if (contadorFasesDavida == 3 && verificaFasesDaVida()) {
 			mae = true;
@@ -212,7 +218,7 @@ public class PlayerCharacter : MonoBehaviour {
 		AgeChanger (1);
 		ScoreActions.ResetaContador();
 		contadorFasesDavida = 0;
-		setAudioPlayer(true, false, false, false);
+		setAudioPlayer(true, false, false, false, false);
 		timerScore = 20;
 		pAnimator = GetComponent<Animator>();
 	}

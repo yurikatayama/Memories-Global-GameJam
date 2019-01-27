@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Mae : MonoBehaviour {
-
 	// Use this for initialization
 	void Start () {}
 	
@@ -13,12 +12,11 @@ public class Mae : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D collider) {
 		if (collider.gameObject.tag == "Player") {
-            esperaInfarto();
-            SceneManager.LoadScene(3);
+            Invoke("chamaCreditos", 4);
         }
 	}
 
-    IEnumerator esperaInfarto() {
-        yield return new WaitForSeconds(4000);
+    void chamaCreditos() {
+        SceneManager.LoadScene(3);
     }
 }
