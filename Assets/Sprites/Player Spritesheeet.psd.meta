@@ -41,6 +41,12 @@ TextureImporter:
     21300072: Player Spritesheeet_19
     21300074: Player Spritesheeet_20
     21300076: Player Spritesheeet_21
+    21300078: Player Spritesheeet_22
+    21300080: Player Spritesheeet_23
+    21300082: Player Spritesheeet_24
+    21300084: Player Spritesheeet_25
+    21300086: Player Spritesheeet_26
+    21300088: Player Spritesheeet_27
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -126,10 +132,10 @@ TextureImporter:
       name: Player Spritesheeet_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 1449
-        width: 253
-        height: 435
+        x: 0
+        y: 1416
+        width: 231
+        height: 413
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 59, y: 35, z: 66, w: 40}
@@ -146,10 +152,10 @@ TextureImporter:
       name: Player Spritesheeet_1
       rect:
         serializedVersion: 2
-        x: 313
-        y: 1426
-        width: 227
-        height: 442
+        x: 251
+        y: 1410
+        width: 251
+        height: 441
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 36, y: 25, z: 102, w: 16}
@@ -166,10 +172,10 @@ TextureImporter:
       name: Player Spritesheeet_2
       rect:
         serializedVersion: 2
-        x: 595
-        y: 1449
-        width: 189
-        height: 428
+        x: 522
+        y: 1418
+        width: 249
+        height: 433
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 26, y: 23, z: 75, w: 19}
@@ -186,10 +192,10 @@ TextureImporter:
       name: Player Spritesheeet_3
       rect:
         serializedVersion: 2
-        x: 847
-        y: 1444
-        width: 186
-        height: 403
+        x: 791
+        y: 1418
+        width: 248
+        height: 434
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 48, y: 15, z: 64, w: 20}
@@ -206,10 +212,10 @@ TextureImporter:
       name: Player Spritesheeet_4
       rect:
         serializedVersion: 2
-        x: 1153
-        y: 1445
-        width: 178
-        height: 386
+        x: 1059
+        y: 1412
+        width: 247
+        height: 439
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 48, y: 18, z: 48, w: 23}
@@ -226,10 +232,10 @@ TextureImporter:
       name: Player Spritesheeet_5
       rect:
         serializedVersion: 2
-        x: 1392
-        y: 1421
-        width: 183
-        height: 337
+        x: 1351
+        y: 1419
+        width: 242
+        height: 410
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 45, y: 13, z: 49, w: 27}
@@ -246,10 +252,10 @@ TextureImporter:
       name: Player Spritesheeet_6
       rect:
         serializedVersion: 2
-        x: 1656
-        y: 1447
-        width: 175
-        height: 324
+        x: 1621
+        y: 1417
+        width: 186
+        height: 411
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 45, y: 16, z: 57, w: 26}
@@ -266,10 +272,10 @@ TextureImporter:
       name: Player Spritesheeet_7
       rect:
         serializedVersion: 2
-        x: 17
-        y: 977
-        width: 253
-        height: 433
+        x: 0
+        y: 945
+        width: 191
+        height: 432
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 58, y: 32, z: 63, w: 36}
@@ -286,10 +292,10 @@ TextureImporter:
       name: Player Spritesheeet_8
       rect:
         serializedVersion: 2
-        x: 313
-        y: 953
-        width: 227
-        height: 441
+        x: 270
+        y: 945
+        width: 191
+        height: 432
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 32, y: 28, z: 103, w: 13}
@@ -306,10 +312,10 @@ TextureImporter:
       name: Player Spritesheeet_9
       rect:
         serializedVersion: 2
-        x: 583
-        y: 943
-        width: 164
-        height: 440
+        x: 539
+        y: 945
+        width: 192
+        height: 430
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 36, y: 24, z: 38, w: 15}
@@ -326,10 +332,10 @@ TextureImporter:
       name: Player Spritesheeet_10
       rect:
         serializedVersion: 2
-        x: 847
-        y: 970
-        width: 227
-        height: 405
+        x: 810
+        y: 945
+        width: 222
+        height: 431
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 47, y: 17, z: 108, w: 24}
@@ -346,10 +352,10 @@ TextureImporter:
       name: Player Spritesheeet_11
       rect:
         serializedVersion: 2
-        x: 1116
-        y: 970
-        width: 187
-        height: 406
+        x: 1081
+        y: 945
+        width: 222
+        height: 431
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 50, y: 17, z: 67, w: 24}
@@ -366,10 +372,10 @@ TextureImporter:
       name: Player Spritesheeet_12
       rect:
         serializedVersion: 2
-        x: 1394
-        y: 949
-        width: 184
-        height: 337
+        x: 1348
+        y: 945
+        width: 191
+        height: 429
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 45, y: 13, z: 64, w: 26}
@@ -391,7 +397,7 @@ TextureImporter:
         width: 180
         height: 336
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 45, y: 14, z: 69, w: 26}
       outline: []
       physicsShape: []
@@ -406,10 +412,10 @@ TextureImporter:
       name: Player Spritesheeet_14
       rect:
         serializedVersion: 2
-        x: 19
-        y: 505
-        width: 254
-        height: 438
+        x: 0
+        y: 472
+        width: 187
+        height: 406
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 54, y: 26, z: 72, w: 36}
@@ -426,10 +432,10 @@ TextureImporter:
       name: Player Spritesheeet_15
       rect:
         serializedVersion: 2
-        x: 302
-        y: 506
-        width: 238
-        height: 402
+        x: 269
+        y: 472
+        width: 187
+        height: 406
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 31, y: 23, z: 95, w: 14}
@@ -446,10 +452,10 @@ TextureImporter:
       name: Player Spritesheeet_16
       rect:
         serializedVersion: 2
-        x: 590
-        y: 475
-        width: 196
-        height: 440
+        x: 541
+        y: 472
+        width: 188
+        height: 406
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 22, y: 25, z: 77, w: 13}
@@ -466,10 +472,10 @@ TextureImporter:
       name: Player Spritesheeet_17
       rect:
         serializedVersion: 2
-        x: 1125
-        y: 488
-        width: 188
-        height: 408
+        x: 1080
+        y: 474
+        width: 227
+        height: 403
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 41, y: 17, z: 62, w: 22}
@@ -486,10 +492,10 @@ TextureImporter:
       name: Player Spritesheeet_18
       rect:
         serializedVersion: 2
-        x: 1350
-        y: 467
-        width: 271
-        height: 342
+        x: 1352
+        y: 473
+        width: 186
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 46, y: 17, z: 151, w: 27}
@@ -511,7 +517,7 @@ TextureImporter:
         width: 172
         height: 320
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 34, y: 16, z: 55, w: 23}
       outline: []
       physicsShape: []
@@ -526,10 +532,10 @@ TextureImporter:
       name: Player Spritesheeet_20
       rect:
         serializedVersion: 2
-        x: 19
-        y: 31
-        width: 250
-        height: 433
+        x: 0
+        y: 0
+        width: 179
+        height: 333
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 57, y: 30, z: 69, w: 34}
@@ -546,10 +552,10 @@ TextureImporter:
       name: Player Spritesheeet_21
       rect:
         serializedVersion: 2
-        x: 300
-        y: 30
-        width: 242
-        height: 438
+        x: 270
+        y: 1
+        width: 178
+        height: 333
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 40, y: 33, z: 72, w: 37}
@@ -558,6 +564,126 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 41945e7139a0173459d41b5dd55f01d0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Spritesheeet_22
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 474
+        width: 186
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce3ca3b7b0db0f34b9130621c8d05a18
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Spritesheeet_23
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 0
+        width: 180
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d6a45803cc5e704abaef72096cb96b6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Spritesheeet_24
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 1
+        width: 179
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da033338d76578c48aced83e7c7dff71
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Spritesheeet_25
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 2
+        width: 179
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6484beb1168e7a345be99af51a0f9803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Spritesheeet_26
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 0
+        width: 258
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 716a52aae3035e5478125b0ee15ef959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player Spritesheeet_27
+      rect:
+        serializedVersion: 2
+        x: 1619
+        y: 0
+        width: 177
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc977d507ec298478ebd538f656fd07
       vertices: []
       indices: 
       edges: []
