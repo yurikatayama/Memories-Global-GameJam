@@ -4,23 +4,14 @@ using UnityEngine;
 
 public static class PlayerActions {
 
-	public static bool 	boolPombos 			= false;
-	public static bool 	boolCachorros 		= false;
-	public static bool 	boolMendigo			= false;
-	public static bool 	boolCasal			= false;
-	public static bool 	Hidrante			= false;
-	public static bool	boolCamelo			= false;
+	public static bool 	boolTrap 			= false;
 	public static bool	gameOverCond		= false;
-
 	public static float	timer 				= 20;
 	public static int 	contador 			= 0;
 	public static int	maxEventCount		= Random.Range(12,30);
-	public static bool 	eventCollider 		= true;
 
 	public static void ContadorEvento () {
-		if (Input.GetKeyDown(KeyCode.Space) && boolPombos) {
-			contador++;
-		}
+		if (Input.GetKeyDown(KeyCode.Space) && boolTrap) contador++;
 	}
 
 	public static void TimeCounter () {

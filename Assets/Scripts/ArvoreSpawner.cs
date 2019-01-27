@@ -20,9 +20,7 @@ public class ArvoreSpawner : MonoBehaviour {
 		} else {
 			spawnTimer += 1 * Time.deltaTime;
 
-			if (spawnTimer > 1) {
-				spawnTimer -= 0.15f * Time.deltaTime;
-			}
+			if (spawnTimer > 1) spawnTimer -= 0.15f * Time.deltaTime;
 
 			if (spawnTimer > spawnTime) {
 				Spawn ();
@@ -33,10 +31,9 @@ public class ArvoreSpawner : MonoBehaviour {
 		
 	}
 
-	void Spawn ()
-     {
+	void Spawn ()	{
          spawnPoint.x = 15;
          spawnPoint.y = Random.Range(-2, 0);
          Instantiate(objectsArvore[Random.Range(0, objectsArvore.Length - 1)], spawnPoint, Quaternion.identity);
-     }
+    }
 }

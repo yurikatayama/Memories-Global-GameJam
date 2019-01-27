@@ -8,21 +8,14 @@ public class TutorialBehavior : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
-
-	}
+	void Start () {}
 	
 	// Update is called once per frame
 	void Update () {
 
 		transform.Translate (-speed * Time.deltaTime, 0, 0);	
 		
-		if (PlayerActions.gameOverCond) {
-			speed = 0;
-		}
-
-		if (transform.position.x <= -25) {
-			Destroy (this);
-		}
+		if (PlayerActions.gameOverCond) speed = 0;
+		if (transform.position.x <= -25) Destroy (this);
 	}
 }

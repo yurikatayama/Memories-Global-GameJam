@@ -17,12 +17,8 @@ public class EventBehavior : MonoBehaviour {
 
 		transform.Translate (-speed * Time.deltaTime, 0, 0);	
 		
-		if (PlayerActions.gameOverCond) {
-			speed = 0;
-		}
+		if (PlayerActions.gameOverCond) speed = 0;
 
-		if (transform.position.x <= -15) {
-			Destroy (this);
-		}
+		if (transform.position.x <= -15) Destroy (this);
 	}
 }

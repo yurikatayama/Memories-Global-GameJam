@@ -13,14 +13,10 @@ public class GameOver : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (gameOver) {
-			SceneManager.LoadScene(2);
-		}
+		if (gameOver) SceneManager.LoadScene(2);
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision) {
-		if (collision.gameObject.tag == "Player") {
-			gameOver = true;
-		}
+		if (collision.gameObject.tag == "Player") gameOver = true;
 	}
 }

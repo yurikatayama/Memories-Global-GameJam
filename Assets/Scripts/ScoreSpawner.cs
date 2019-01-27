@@ -18,9 +18,7 @@ public class ScoreSpawner : MonoBehaviour {
 	void FixedUpdate () {
 		spawnTimer += 1 * Time.deltaTime;
 
-		if (spawnTimer > 1) {
-			spawnTimer -= 0.30f * Time.deltaTime;
-		}
+		if (spawnTimer > 1) spawnTimer -= 0.30f * Time.deltaTime;
 
 		if (spawnTimer > spawnTime) {
 			Spawn ();
