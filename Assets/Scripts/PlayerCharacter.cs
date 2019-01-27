@@ -19,6 +19,7 @@ public class PlayerCharacter : MonoBehaviour {
 	private bool eventWrapper 	= false;
 	private bool esposa = false, diploma = false, guitarra = false, mae = false;
 	private GameObject gameObj;
+	public List<GameObject> Sound;
 	
 	// private float miopia;
 
@@ -34,7 +35,7 @@ public class PlayerCharacter : MonoBehaviour {
 		AgeChanger (1);
 		ScoreActions.ResetaContador();
 		contadorFasesDavida = 0;
-
+		Sound[0].SetActive(true);
 		timerScore = 20;
 	}
 	
@@ -162,14 +163,23 @@ public class PlayerCharacter : MonoBehaviour {
 		
 		if (collision.gameObject.tag == "Fases da Vida") {
 			if (contadorFasesDavida == 0 && verificaFasesDaVida()) {
+				Sound[0].SetActive(false);
+				Sound[1].SetActive(true);
 				age = 2;
 				esposa = true;
 				Debug.Log("esposa");
 			} else if (contadorFasesDavida == 1 && verificaFasesDaVida()) {
+				Sound[0].SetActive(false);
+				Sound[1].SetActive(false);
+				Sound[2].SetActive(true);
 				age = 3;
 				diploma = true;
 				Debug.Log("diploma");
 			} else if (contadorFasesDavida == 2 && verificaFasesDaVida()) {
+				Sound[0].SetActive(false);
+				Sound[1].SetActive(false);
+				Sound[2].SetActive(false);
+				Sound[3].SetActive(true);
 				age = 4;
 				guitarra = true;
 				Debug.Log("guitarra");
