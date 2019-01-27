@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 61333621867860446}
   - component: {fileID: 114382205344790322}
   - component: {fileID: 95580160359660840}
-  - component: {fileID: 114699132202542628}
   m_Layer: 0
   m_Name: Score
   m_TagString: Score
@@ -99,17 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
---- !u!114 &114699132202542628
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1366972464872274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa19727d997587f4d9a9b95eeaf9a769, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212152709355121252
 SpriteRenderer:
   m_ObjectHideFlags: 1
