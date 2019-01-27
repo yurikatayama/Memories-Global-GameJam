@@ -30,7 +30,7 @@ public class ScoreSpawner : MonoBehaviour {
 
 	void Spawn ()	{
 		spawnPoint.x = Random.Range(14, 16);
-		spawnPoint.y = Random.Range(-1, 4);
+		spawnPoint.y = Random.Range(0, 5);
 		Instantiate(objectScore[Random.Range(0, objectScore.Length - 1)], spawnPoint, Quaternion.identity);
      }
 }
