@@ -527,6 +527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btTexture: {fileID: 2800000, guid: caf23c812b4c0b047be6517f15e2747e, type: 3}
+  btCreditos: {fileID: 2800000, guid: 79a9a12eeaebc05448c79dc729c4979c, type: 3}
 --- !u!1 &1403029196
 GameObject:
   m_ObjectHideFlags: 0
