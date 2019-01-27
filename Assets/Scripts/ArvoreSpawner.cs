@@ -9,7 +9,7 @@ public class ArvoreSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		spawnTime = Random.Range (2,11);
+		spawnTime = Random.Range (1,11);
 
 	}
 	

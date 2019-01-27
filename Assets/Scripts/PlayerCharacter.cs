@@ -111,7 +111,7 @@ public class PlayerCharacter : MonoBehaviour {
 				PlayerActions.gameOverCond = true;
 				Invoke ("GameOverCondition", 4);
 			} else {
-				stress = Random.Range (0f, 200000f);
+				stress = Random.Range (0f, 1000000f);
 				if (infarto < 10) infarto += 0.05f * Time.deltaTime;
 			}
 		}
@@ -167,6 +167,7 @@ public class PlayerCharacter : MonoBehaviour {
 			contadorFasesDavida++;
 	}
 	private void setIdadeDaVida(int idade) {
+		age = idade;
 		if (idade == 2) esposa = true;
 		else if (idade == 3) diploma = true;
 		else if (idade == 4) guitarra = true;
