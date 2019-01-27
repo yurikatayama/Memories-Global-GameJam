@@ -97,8 +97,8 @@ public class PlayerCharacter : MonoBehaviour {
 				PlayerActions.gameOverCond = true;
 				Invoke ("GameOverCondition", 4);
 			} else {
-				stress = Random.Range (0f, 10000f);
-				if (infarto < 100) {
+				stress = Random.Range (0f, 200000f);
+				if (infarto < 10) {
 					infarto += 0.05f * Time.deltaTime;
 				}
 			}
@@ -122,7 +122,7 @@ public class PlayerCharacter : MonoBehaviour {
 
 	void AgeChanger (float playerAge) {
 		
-		Time.timeScale = playerAge * 1.5f;
+		Time.timeScale = playerAge * 1.2f;
 		if (age == 1) {
             SetPlayerCharacter(2f, 1f, 1);
         }
