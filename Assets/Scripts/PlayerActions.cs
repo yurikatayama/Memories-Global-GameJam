@@ -11,7 +11,12 @@ public static class PlayerActions {
 	public static int	maxEventCount		= Random.Range(12,30);
 
 	public static void ContadorEvento () {
-		if (Input.GetKeyDown(KeyCode.Space) && boolTrap) contador++;
+		if ((Input.GetKeyDown(KeyCode.Space)
+			|| 	Input.GetKeyDown(KeyCode.Z)
+			|| 	Input.GetKeyDown(KeyCode.X)
+			|| 	Input.GetKeyDown(KeyCode.P)
+			|| 	Input.GetKeyDown(KeyCode.I))
+			&&	boolTrap) contador++;
 	}
 
 	public static void TimeCounter () {
