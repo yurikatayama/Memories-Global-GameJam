@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class ScoreActions {
 
-	public static int 	contador = 0;
+	public static int contador = 0;
 
 	public static void ContadorEvento () {
 		contador++;
