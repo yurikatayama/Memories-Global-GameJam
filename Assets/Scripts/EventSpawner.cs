@@ -12,7 +12,6 @@ public class EventSpawner : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		spawnTime = 12f;
-		Spawn ();
 	}
 	
 	void FixedUpdate () {
@@ -27,9 +26,9 @@ public class EventSpawner : MonoBehaviour {
 	}
 
 	void Spawn ()
-     {
-         spawnPoint.x = 13;
-         spawnPoint.y = -1.76f;
-         Instantiate(objectsEvent[Random.Range(0, objectsEvent.Length - 1)], spawnPoint, Quaternion.identity);
-     }
+	{
+		spawnPoint.x = 13;
+		spawnPoint.y = -1.76f;
+		Instantiate(objectsEvent[Random.Range(0, objectsEvent.Length - 1)], spawnPoint, Quaternion.identity);
+	}
 }
