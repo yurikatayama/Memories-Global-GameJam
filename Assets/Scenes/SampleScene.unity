@@ -479,7 +479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &500870864
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1156,7 +1156,7 @@ MonoBehaviour:
   - {fileID: 2056651274}
   - {fileID: 736527492}
   - {fileID: 500870863}
-  superPlayer: 1
+  superPlayer: 0
 --- !u!50 &1255543173
 Rigidbody2D:
   serializedVersion: 4
