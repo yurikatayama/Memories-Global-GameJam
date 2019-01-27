@@ -10,6 +10,7 @@ public class EndCredits : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		timer = 0;
+		Time.timeScale = 1;
 	}
 	
 	// Update is called once per frame

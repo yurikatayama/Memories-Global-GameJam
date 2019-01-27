@@ -8,7 +8,7 @@ public static class PlayerActions {
 	public static bool	gameOverCond		= false;
 	public static float	timer 				= 20;
 	public static int 	contador 			= 0;
-	public static int	maxEventCount		= Random.Range(12,30);
+	public static int	maxEventCount		= Random.Range(8,24);
 
 	public static void ContadorEvento () {
 		if ((Input.GetKeyDown(KeyCode.Space)

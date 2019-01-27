@@ -41,13 +41,14 @@ public class PlayerCharacter : MonoBehaviour {
 
 	void FixedUpdate() {
 		AgeChanger (age);
+		if (!mae) {
+			andaPlayer();
+			verificaParadaNoPombo();
 
-		andaPlayer();
-		verificaParadaNoPombo();
-
-		if (PlayerActions.gameOverCond) moveLeft = 0;
-		
-		verificaInfarto();
+			if (PlayerActions.gameOverCond) moveLeft = 0;
+			
+			verificaInfarto();
+		} else rb.velocity = velocidade(0, 0);
 	}
 
 	void OnCollisionEnter2D(Collision2D collision) {
@@ -60,10 +61,10 @@ public class PlayerCharacter : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision) {
-		if (collision.gameObject.tag == "Event Trap" && !superPlayer) {
+		/*if (collision.gameObject.tag == "Event Trap" && !superPlayer) {
 			gameObj = collision.gameObject;
 			setPombosConditions(true, true, 0);
-		}
+		}*/
 		if (collision.gameObject.tag == "Score") {
 			ScoreActions.contador += Random.Range(5,10);
 			Destroy(collision.gameObject);
