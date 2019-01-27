@@ -1031,8 +1031,7 @@ MonoBehaviour:
   - {fileID: 1569705859}
   - {fileID: 1592817249}
   - {fileID: 736527492}
-  superPlayer: 0
-  pAnimator: {fileID: 0}
+  superPlayer: 1
 --- !u!50 &1255543173
 Rigidbody2D:
   serializedVersion: 4

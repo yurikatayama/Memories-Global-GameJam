@@ -22,12 +22,10 @@ public class PlayerCharacter : MonoBehaviour {
 	public List<GameObject> Sound;
 	public bool superPlayer = false;
 
-	public Animator pAnimator;
+	private Animator pAnimator;
 
 	void Start () {
-		Time.timeScale = 3;
 		inicializador();
-		pAnimator = GetComponent<Animator>();
 	}
 	
 	void Update () {
@@ -38,7 +36,15 @@ public class PlayerCharacter : MonoBehaviour {
 		transform.Translate (-moveLeft * Time.deltaTime, 0, 0);
 
 		calculaScore();
-		if (superPlayer) age = 4;
+	
+		if (superPlayer) {
+			if (Input.GetKeyDown(KeyCode.V)) age = 1;
+			if (Input.GetKeyDown(KeyCode.B)) age = 2;
+			if (Input.GetKeyDown(KeyCode.N)) age = 3;
+			if (Input.GetKeyDown(KeyCode.M)) age = 4;
+		}
+		
+		pAnimator.SetInteger 	("playerAge", age);
     }
 
 	void FixedUpdate() {
@@ -59,17 +65,22 @@ public class PlayerCharacter : MonoBehaviour {
 	void OnCollisionExit2D(Collision2D collision) {
 		if (collision.gameObject.tag == "ground") jumping 			= true;
 		if (collision.gameObject.tag == "Event Trap") eventWrapper 	= false;
-		ChangeAnimator (true, false, false, age);
 
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision) {
+	void OnTriggerExit2D(Collider2D other) {
+		if (other.gameObject.tag == "Event Trap" && !superPlayer) {
+			ChangeAnimator (true, false, false, age);
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.gameObject.tag == "Event Trap" && !superPlayer) {
 			gameObj = collision.gameObject;
 			setPombosConditions(true, true, 0);
-			pAnimator.SetBool ("eventAction", true);
-			//ChangeAnimator (false, true, false, age);
+			ChangeAnimator (false, true, false, age);
 		}
+		
 		if (collision.gameObject.tag == "Score") {
 			ScoreActions.contador += Random.Range(5,10);
 			Destroy(collision.gameObject);
@@ -82,10 +93,10 @@ public class PlayerCharacter : MonoBehaviour {
 	}
 
 	private void ChangeAnimator (bool walk, bool eventAct, bool dying, int changeAge) {
-		pAnimator.SetBool ("eventAction", walk);
-		pAnimator.SetBool ("andar", eventAct);
-		pAnimator.SetBool ("morrer", dying);
-		pAnimator.SetInteger ("playerAge", changeAge);
+		pAnimator.SetBool 		("andar", 		walk);
+		pAnimator.SetBool 		("eventAction", eventAct);
+		pAnimator.SetBool 		("morrer", 		dying);
+		pAnimator.SetInteger 	("playerAge", 	changeAge);
 
 	}
 
@@ -202,9 +213,10 @@ public class PlayerCharacter : MonoBehaviour {
 		contadorFasesDavida = 0;
 		setAudioPlayer(true, false, false, false);
 		timerScore = 20;
+		pAnimator = GetComponent<Animator>();
 	}
 
-		void GameOverCondition () {
+	void GameOverCondition () {
 		SceneManager.LoadScene(2);
 	}
 
