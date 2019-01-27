@@ -174,14 +174,12 @@ public class PlayerCharacter : MonoBehaviour {
 				Sound[1].SetActive(true);
 				age = 2;
 				esposa = true;
-				Debug.Log("esposa");
 			} else if (contadorFasesDavida == 1 && verificaFasesDaVida()) {
 				Sound[0].SetActive(false);
 				Sound[1].SetActive(false);
 				Sound[2].SetActive(true);
 				age = 3;
 				diploma = true;
-				Debug.Log("diploma");
 			} else if (contadorFasesDavida == 2 && verificaFasesDaVida()) {
 				Sound[0].SetActive(false);
 				Sound[1].SetActive(false);
@@ -189,10 +187,8 @@ public class PlayerCharacter : MonoBehaviour {
 				Sound[3].SetActive(true);
 				age = 4;
 				guitarra = true;
-				Debug.Log("guitarra");
 			} else if (contadorFasesDavida == 3 && verificaFasesDaVida()) {
 				mae = true;
-				Debug.Log("mae");
 			}
 			contadorFasesDavida++;
 			collision.gameObject.tag = "Untagged";

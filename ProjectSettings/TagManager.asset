@@ -9,6 +9,8 @@ TagManager:
   - Game Over
   - Score
   - Fases da Vida
+  - cloud
+  - Score Icon
   layers:
   - Default
   - TransparentFX
