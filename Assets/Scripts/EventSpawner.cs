@@ -12,6 +12,7 @@ public class EventSpawner : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		spawnTime = 12f;
+		Spawn ();
 	}
 	
 	void FixedUpdate () {

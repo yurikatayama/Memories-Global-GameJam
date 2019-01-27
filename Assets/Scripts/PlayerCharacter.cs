@@ -22,12 +22,12 @@ public class PlayerCharacter : MonoBehaviour {
 	public List<GameObject> Sound;
 	public bool superPlayer = false;
 
-	// Use this for initialization
+	private Animator pAnimator;
+
 	void Start () {
 		inicializador();
 	}
 	
-	// Update is called once per frame
 	void Update () {
         vert = Input.GetAxisRaw("Vertical");
         hori = Input.GetAxis("Horizontal");
@@ -36,7 +36,15 @@ public class PlayerCharacter : MonoBehaviour {
 		transform.Translate (-moveLeft * Time.deltaTime, 0, 0);
 
 		calculaScore();
-		if (superPlayer) age = 4;
+	
+		if (superPlayer) {
+			if (Input.GetKeyDown(KeyCode.V)) age = 1;
+			if (Input.GetKeyDown(KeyCode.B)) age = 2;
+			if (Input.GetKeyDown(KeyCode.N)) age = 3;
+			if (Input.GetKeyDown(KeyCode.M)) age = 4;
+		}
+		
+		pAnimator.SetInteger 	("playerAge", age);
     }
 
 	void FixedUpdate() {
@@ -58,13 +66,22 @@ public class PlayerCharacter : MonoBehaviour {
 	void OnCollisionExit2D(Collision2D collision) {
 		if (collision.gameObject.tag == "ground") jumping 			= true;
 		if (collision.gameObject.tag == "Event Trap") eventWrapper 	= false;
+
 	}
 
-	private void OnTriggerEnter2D(Collider2D collision) {
-		/*if (collision.gameObject.tag == "Event Trap" && !superPlayer) {
+	void OnTriggerExit2D(Collider2D other) {
+		if (other.gameObject.tag == "Event Trap" && !superPlayer) {
+			ChangeAnimator (true, false, false, age);
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D collision) {
+		if (collision.gameObject.tag == "Event Trap" && !superPlayer) {
 			gameObj = collision.gameObject;
 			setPombosConditions(true, true, 0);
-		}*/
+			ChangeAnimator (false, true, false, age);
+		}
+		
 		if (collision.gameObject.tag == "Score") {
 			ScoreActions.contador += Random.Range(5,10);
 			Destroy(collision.gameObject);
@@ -74,6 +91,14 @@ public class PlayerCharacter : MonoBehaviour {
 			setFaseDaVida();
 			collision.gameObject.tag = "Untagged";
 		}
+	}
+
+	private void ChangeAnimator (bool walk, bool eventAct, bool dying, int changeAge) {
+		pAnimator.SetBool 		("andar", 		walk);
+		pAnimator.SetBool 		("eventAction", eventAct);
+		pAnimator.SetBool 		("morrer", 		dying);
+		pAnimator.SetInteger 	("playerAge", 	changeAge);
+
 	}
 
 	void setPombosConditions(bool evWrp, bool boolPombos, int resetCounter) {
@@ -107,6 +132,7 @@ public class PlayerCharacter : MonoBehaviour {
 		if (!superPlayer) {
 			if (stress <= infarto) {
 				Debug.Log("Infarto Fulminante");
+				ChangeAnimator (false, false, true, age);
 				stress = 0;
 				infarto = 0;
 				PlayerActions.gameOverCond = true;
@@ -188,9 +214,10 @@ public class PlayerCharacter : MonoBehaviour {
 		contadorFasesDavida = 0;
 		setAudioPlayer(true, false, false, false);
 		timerScore = 20;
+		pAnimator = GetComponent<Animator>();
 	}
 
-		void GameOverCondition () {
+	void GameOverCondition () {
 		SceneManager.LoadScene(2);
 	}
 
