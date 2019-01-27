@@ -97,7 +97,7 @@ public class PlayerCharacter : MonoBehaviour {
 				PlayerActions.gameOverCond = true;
 				Invoke ("GameOverCondition", 4);
 			} else {
-				stress = Random.Range (0f, 100000f);
+				stress = Random.Range (0f, 200000f);
 				if (infarto < 10) {
 					infarto += 0.05f * Time.deltaTime;
 				}

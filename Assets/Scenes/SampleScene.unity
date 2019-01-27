@@ -907,7 +907,7 @@ MonoBehaviour:
   - {fileID: 1867045150}
   - {fileID: 1470912422}
   - {fileID: 2025551917}
-  superPlayer: 1
+  superPlayer: 0
 --- !u!50 &1255543173
 Rigidbody2D:
   serializedVersion: 4
@@ -927,7 +927,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1255543174
 BoxCollider2D:
   m_ObjectHideFlags: 0

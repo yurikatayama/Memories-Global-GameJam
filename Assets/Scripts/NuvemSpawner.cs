@@ -11,10 +11,12 @@ public class NuvemSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		spawnTime = Random.Range(3,9);
+		
 	}
 	
 	void FixedUpdate () {
+		
+		spawnTime = Random.Range(3,9);
 		spawnTimer += 1 * Time.deltaTime;
 
 		if (spawnTimer > 1) {
