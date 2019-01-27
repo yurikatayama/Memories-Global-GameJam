@@ -22,12 +22,14 @@ public class PlayerCharacter : MonoBehaviour {
 	public List<GameObject> Sound;
 	public bool superPlayer = false;
 
-	// Use this for initialization
+	public Animator pAnimator;
+
 	void Start () {
+		Time.timeScale = 3;
 		inicializador();
+		pAnimator = GetComponent<Animator>();
 	}
 	
-	// Update is called once per frame
 	void Update () {
         vert = Input.GetAxisRaw("Vertical");
         hori = Input.GetAxis("Horizontal");
@@ -46,7 +48,7 @@ public class PlayerCharacter : MonoBehaviour {
 		verificaParadaNoPombo();
 
 		if (PlayerActions.gameOverCond) moveLeft = 0;
-		
+	
 		verificaInfarto();
 	}
 
@@ -57,12 +59,16 @@ public class PlayerCharacter : MonoBehaviour {
 	void OnCollisionExit2D(Collision2D collision) {
 		if (collision.gameObject.tag == "ground") jumping 			= true;
 		if (collision.gameObject.tag == "Event Trap") eventWrapper 	= false;
+		ChangeAnimator (true, false, false, age);
+
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.gameObject.tag == "Event Trap" && !superPlayer) {
 			gameObj = collision.gameObject;
 			setPombosConditions(true, true, 0);
+			pAnimator.SetBool ("eventAction", true);
+			//ChangeAnimator (false, true, false, age);
 		}
 		if (collision.gameObject.tag == "Score") {
 			ScoreActions.contador += Random.Range(5,10);
@@ -73,6 +79,14 @@ public class PlayerCharacter : MonoBehaviour {
 			setFaseDaVida();
 			collision.gameObject.tag = "Untagged";
 		}
+	}
+
+	private void ChangeAnimator (bool walk, bool eventAct, bool dying, int changeAge) {
+		pAnimator.SetBool ("eventAction", walk);
+		pAnimator.SetBool ("andar", eventAct);
+		pAnimator.SetBool ("morrer", dying);
+		pAnimator.SetInteger ("playerAge", changeAge);
+
 	}
 
 	void setPombosConditions(bool evWrp, bool boolPombos, int resetCounter) {
@@ -106,6 +120,7 @@ public class PlayerCharacter : MonoBehaviour {
 		if (!superPlayer) {
 			if (stress <= infarto) {
 				Debug.Log("Infarto Fulminante");
+				ChangeAnimator (false, false, true, age);
 				stress = 0;
 				infarto = 0;
 				PlayerActions.gameOverCond = true;
