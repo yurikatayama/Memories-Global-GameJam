@@ -21,6 +21,8 @@ public class PlayerCharacter : MonoBehaviour {
 	private GameObject gameObj;
 	public List<GameObject> Sound;
 	
+	public bool superPlayer = false;
+
 	// private float miopia;
 
 	// Use this for initialization
@@ -58,6 +60,10 @@ public class PlayerCharacter : MonoBehaviour {
 			timerScore = 20;
 
 		}
+
+		if (superPlayer) {
+			age = 4;
+		}
     }
 
 	void FixedUpdate() {
@@ -83,19 +89,20 @@ public class PlayerCharacter : MonoBehaviour {
 			moveLeft = 0;
 		}
 		
-		if (stress <= infarto) {
-			Debug.Log("Infarto Fulminante");
-			stress = 0;
-			infarto = 0;
-			PlayerActions.gameOverCond = true;
-			Invoke ("GameOverCondition", 4);
-		} else {
-			stress = Random.Range (50f, 250f);
-			if (infarto > 70) {
-				infarto += 0.05f * Time.deltaTime;
+		if (!superPlayer) {
+			if (stress <= infarto) {
+				Debug.Log("Infarto Fulminante");
+				stress = 0;
+				infarto = 0;
+				PlayerActions.gameOverCond = true;
+				Invoke ("GameOverCondition", 4);
+			} else {
+				stress = Random.Range (0f, 10000f);
+				if (infarto < 100) {
+					infarto += 0.05f * Time.deltaTime;
+				}
 			}
 		}
-
 		if (Input.GetKeyDown(KeyCode.O) && age <= 4) {
 			age++;
 			AgeChanger (age);
@@ -152,12 +159,12 @@ public class PlayerCharacter : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision) {
-		if (collision.gameObject.tag == "Event Trap") {
+		if (collision.gameObject.tag == "Event Trap" && !superPlayer) {
 			gameObj = collision.gameObject;
 			setPombosConditions(true, true, 0);
 		}
 		if (collision.gameObject.tag == "Score") {
-			ScoreActions.ContadorEvento();
+			ScoreActions.contador += Random.Range(5,10);
 			Destroy(collision.gameObject);
 		}
 		

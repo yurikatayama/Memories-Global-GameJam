@@ -907,6 +907,7 @@ MonoBehaviour:
   - {fileID: 1867045150}
   - {fileID: 1470912422}
   - {fileID: 2025551917}
+  superPlayer: 1
 --- !u!50 &1255543173
 Rigidbody2D:
   serializedVersion: 4

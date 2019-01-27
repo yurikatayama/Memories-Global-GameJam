@@ -12,7 +12,6 @@ public class Score : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		score.text = "Score: " + ScoreActions.contador;
 	}
 
 	private void OnTriggerEnter2D(Collider2D collider) {
