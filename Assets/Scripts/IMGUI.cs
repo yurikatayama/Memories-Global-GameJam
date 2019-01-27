@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class IMGUI : MonoBehaviour {
 
+	public Texture btTexture;
 	private float tx, ty;
 
 	// Use this for initialization
@@ -21,7 +22,7 @@ public class IMGUI : MonoBehaviour {
 
 	void OnGUI() {
 
-		if (GUI.Button(new Rect(tx/4, 5*ty/7, tx/2, ty/6), "Start Game")) {
+		if (GUI.Button(new Rect(3*tx/4, 3*ty/4+10, tx/5, ty/5), btTexture)) {
 			SceneManager.LoadScene(1);
 		}
 
