@@ -18,8 +18,7 @@ public static class PlayerActions {
 	public static bool 	eventCollider 		= true;
 
 	public static void ContadorEvento () {
-		if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKey(KeyCode.L) || Input.GetKey(KeyCode.K) ||
-			Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.X)) 					&& boolPombos) {
+		if (Input.GetKeyDown(KeyCode.Space) && boolPombos) {
 			contador++;
 		}
 	}

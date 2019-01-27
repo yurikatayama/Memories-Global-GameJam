@@ -30,7 +30,7 @@ public class EventSpawner : MonoBehaviour {
 	void Spawn ()
      {
          spawnPoint.x = 11;
-         spawnPoint.y = -1.5f;
+         spawnPoint.y = -1;
          Instantiate(objectsEvent[Random.Range(0, objectsEvent.Length - 1)], spawnPoint, Quaternion.identity);
      }
 }

@@ -9,10 +9,6 @@ public class PlayerCharacter : MonoBehaviour {
 	private float jumpMultiplyer, speedMultiplyer, details, initialSpeed,
 				  initialJump, speed, jump, moveLeft, infarto, stress,
 				  canJump = 0f;
-
-	private float timerScore;
-	private int scoreTime;
-
 	float vert, hori;
 	private Rigidbody2D rb;
 	private bool jumping 		= true;
@@ -34,8 +30,6 @@ public class PlayerCharacter : MonoBehaviour {
 		AgeChanger (1);
 		ScoreActions.ResetaContador();
 		contadorFasesDavida = 0;
-
-		timerScore = 20;
 	}
 	
 	// Update is called once per frame
@@ -46,17 +40,6 @@ public class PlayerCharacter : MonoBehaviour {
 
 		PlayerActions.ContadorEvento();
 		transform.Translate (-moveLeft * Time.deltaTime, 0, 0);
-
-		if (eventWrapper && timerScore >= 0) {
-			timerScore -= 1 * Time.deltaTime;
-			scoreTime = (int) timerScore;
-			Debug.Log ("Tempo: " + scoreTime);
-		} else {
-			ScoreActions.contador += scoreTime;
-			scoreTime = 0;
-			timerScore = 20;
-
-		}
     }
 
 	void FixedUpdate() {
