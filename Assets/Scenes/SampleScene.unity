@@ -444,7 +444,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 7f0845716cb101b4294db63fd27a458d, type: 3}
     m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
@@ -947,7 +947,7 @@ Animator:
   m_GameObject: {fileID: 1255543168}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 90bc3b868bb752a4ba93f0f4f1c94c41, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6021195dcd0dec24d84032f11d78f7d1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1031,7 +1031,7 @@ MonoBehaviour:
   - {fileID: 1569705859}
   - {fileID: 1592817249}
   - {fileID: 736527492}
-  superPlayer: 1
+  superPlayer: 0
 --- !u!50 &1255543173
 Rigidbody2D:
   serializedVersion: 4
@@ -1068,7 +1068,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0.59, y: 0.35, z: 0.65999997, w: 0.39999998}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.53, y: 4.35}
+    oldSize: {x: 2.31, y: 4.13}
     newSize: {x: 2.53, y: 4.35}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
