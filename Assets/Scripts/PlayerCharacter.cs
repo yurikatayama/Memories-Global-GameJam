@@ -151,10 +151,10 @@ public class PlayerCharacter : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision) {
-		if (collision.gameObject.tag == "Event Trap") {
+		/*if (collision.gameObject.tag == "Event Trap") {
 			gameObj = collision.gameObject;
 			setPombosConditions(true, true, 0);
-		}
+		}*/
 		if (collision.gameObject.tag == "Score") {
 			ScoreActions.ContadorEvento();
 			Destroy(collision.gameObject);

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ArvoreSpawner : MonoBehaviour {
 
@@ -12,6 +10,7 @@ public class ArvoreSpawner : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		spawnTime = Random.Range (2,11);
+
 	}
 	
 	void FixedUpdate () {
