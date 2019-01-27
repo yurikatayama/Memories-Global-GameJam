@@ -91,12 +91,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 68
-        y: 633
+        y: 644
         width: 384
-        height: 223
+        height: 212
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 82, y: 67, z: 61, w: 32}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -110,13 +110,13 @@ TextureImporter:
       name: memories_1
       rect:
         serializedVersion: 2
-        x: 72
+        x: 75
         y: 373
-        width: 384
+        width: 381
         height: 223
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 59, y: 85, z: 37, w: 46}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -135,8 +135,8 @@ TextureImporter:
         width: 384
         height: 223
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 58, y: 63, z: 39, w: 45}
       outline: []
       physicsShape: []
       tessellationDetail: 0
