@@ -16,14 +16,8 @@ public class Score : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter2D(Collider2D collider) {
-		if (collider.gameObject.tag == "Event Trap") {
-			Destroy(this);
-		}
-		if (collider.gameObject.tag == "Score") {
-			Destroy(collider.gameObject);
-		}
-		if (collider.gameObject.tag == "Fases da Vida") {
-			Destroy(this);
-		}
+		if (collider.gameObject.tag == "Event Trap") Destroy(this);
+		if (collider.gameObject.tag == "Score") Destroy(collider.gameObject);
+		if (collider.gameObject.tag == "Fases da Vida") Destroy(this);
 	}
 }

@@ -80,7 +80,7 @@ public class PlayerCharacter : MonoBehaviour {
 		
 		if (eventWrapper) {
 			rb.velocity = new Vector2(0, 0);
-			if (PlayerActions.contador == PlayerActions.maxEventCount) {
+			if (PlayerActions.contador == valorPombo()) {
 				Destroy(gameObj);
 				setPombosConditions(false, false, 0);
 			}
@@ -197,7 +197,7 @@ public class PlayerCharacter : MonoBehaviour {
 
 	void setPombosConditions(bool evWrp, bool boolPombos, int resetCounter) {
 		eventWrapper 				= evWrp;
-		PlayerActions.boolPombos 	= boolPombos;
+		PlayerActions.boolTrap 	= boolPombos;
 		PlayerActions.contador	 	= resetCounter;
 	}
 
@@ -212,5 +212,9 @@ public class PlayerCharacter : MonoBehaviour {
 			return esposa && diploma && guitarra && !mae;
 		}
 		return mae;
+	}
+
+	int valorPombo() {
+		return (PlayerActions.maxEventCount/((age/10)+1));
 	}
 }

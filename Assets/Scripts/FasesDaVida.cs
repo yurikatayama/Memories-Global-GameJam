@@ -15,11 +15,7 @@ public class FasesDaVida : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter2D(Collider2D collider) {
-		if (collider.gameObject.tag == "Score") {
-			Destroy(collider.gameObject);
-		}
-		if (collider.gameObject.tag == "Event Trap") {
-			Destroy(collider.gameObject);
-		}
+		if (collider.gameObject.tag == "Score")	Destroy(collider.gameObject);
+		if (collider.gameObject.tag == "Event Trap") Destroy(collider.gameObject);
 	}
 }

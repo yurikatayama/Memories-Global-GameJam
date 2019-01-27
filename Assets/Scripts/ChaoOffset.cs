@@ -11,20 +11,15 @@ public class ChaoOffset : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
 		rendy = GetComponent<Renderer>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-		if (PlayerActions.gameOverCond) {
-			speed = 0;
-		}
+		if (PlayerActions.gameOverCond) speed = 0;
 		
 		offset += Time.deltaTime * -speed;
 		rendy.material.SetTextureOffset ("_MainTex", new Vector2 (-offset, 0));
-		
 	}
 	
 }

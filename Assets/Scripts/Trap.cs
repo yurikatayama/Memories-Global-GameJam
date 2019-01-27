@@ -5,21 +5,13 @@ using UnityEngine;
 public class Trap : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
-		
-	}
+	void Start () {}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Update () {}
 
 	private void OnTriggerEnter2D(Collider2D collider) {
-		if (collider.gameObject.tag == "Score") {
-			Destroy(collider.gameObject);
-		}
-		if (collider.gameObject.tag == "Fases da Vida") {
-			Destroy(this);
-		}
+		if (collider.gameObject.tag == "Score") Destroy(collider.gameObject);
+		if (collider.gameObject.tag == "Fases da Vida") Destroy(this);
 	}
 }

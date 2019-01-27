@@ -15,16 +15,11 @@ public class IMGUI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 		tx = Screen.width;
 		ty = Screen.height;
 	}
 
 	void OnGUI() {
-
-		if (GUI.Button(new Rect(3*tx/4, 3*ty/4+10, tx/5, ty/5), btTexture)) {
-			SceneManager.LoadScene(1);
-		}
-
+		if (GUI.Button(new Rect(3*tx/4, 3*ty/4+10, tx/5, ty/5), btTexture)) SceneManager.LoadScene(1);
 	}
 }

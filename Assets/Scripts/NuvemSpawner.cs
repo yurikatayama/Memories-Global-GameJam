@@ -19,9 +19,7 @@ public class NuvemSpawner : MonoBehaviour {
 		spawnTime = Random.Range(3,9);
 		spawnTimer += 1 * Time.deltaTime;
 
-		if (spawnTimer > 1) {
-			spawnTimer -= 0.15f * Time.deltaTime;
-		}
+		if (spawnTimer > 1) spawnTimer -= 0.15f * Time.deltaTime;
 
 		if (spawnTimer > spawnTime) {
 			Spawn ();
