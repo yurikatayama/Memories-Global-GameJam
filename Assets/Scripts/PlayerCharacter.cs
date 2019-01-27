@@ -122,7 +122,7 @@ public class PlayerCharacter : MonoBehaviour {
 
 	void AgeChanger (float playerAge) {
 		
-		Time.timeScale = playerAge * 1.5f;
+		Time.timeScale = playerAge * 1.2f;
 		if (age == 1) {
             SetPlayerCharacter(2f, 1f, 1);
         }
