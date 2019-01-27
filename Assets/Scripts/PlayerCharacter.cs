@@ -20,134 +20,35 @@ public class PlayerCharacter : MonoBehaviour {
 	private bool esposa = false, diploma = false, guitarra = false, mae = false;
 	private GameObject gameObj;
 	public List<GameObject> Sound;
-	
 	public bool superPlayer = false;
-
-	// private float miopia;
 
 	// Use this for initialization
 	void Start () {
-		rb = GetComponent<Rigidbody2D>();
-		age = 1;
-		infarto = 0.5f;
-		stress = 10;
-		moveLeft = 0.5f;
-		speed = initialSpeed = 1;
-		jump = initialJump = 5;
-		AgeChanger (1);
-		ScoreActions.ResetaContador();
-		contadorFasesDavida = 0;
-		Sound[0].SetActive(true);
-		timerScore = 20;
+		inicializador();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
         vert = Input.GetAxisRaw("Vertical");
         hori = Input.GetAxis("Horizontal");
 
 		PlayerActions.ContadorEvento();
 		transform.Translate (-moveLeft * Time.deltaTime, 0, 0);
 
-		if (eventWrapper && timerScore >= 0) {
-			timerScore -= 1 * Time.deltaTime;
-			scoreTime = (int) timerScore;
-			Debug.Log ("Tempo: " + scoreTime);
-		} else {
-			ScoreActions.contador += scoreTime;
-			scoreTime = 0;
-			timerScore = 20;
-
-		}
-
-		if (superPlayer) {
-			age = 4;
-		}
+		calculaScore();
+		if (superPlayer) age = 4;
     }
 
 	void FixedUpdate() {
 		AgeChanger (age);
-        if(!jumping && !eventWrapper) {
-			if (Time.time > canJump) {
-				rb.velocity = new Vector2(hori * speed, vert * jump);
-			} else {
-				rb.velocity = new Vector2(hori * speed, 0);
-			}
-		} else if (jumping) {
-			canJump = Time.time + 0.3f;
-		}
+
+		andaPlayer();
+		verificaParadaNoPombo();
+
+		if (PlayerActions.gameOverCond) moveLeft = 0;
 		
-		if (eventWrapper) {
-			rb.velocity = new Vector2(0, 0);
-			if (PlayerActions.contador == valorPombo()) {
-				Destroy(gameObj);
-				setPombosConditions(false, false, 0);
-			}
-		}
-		if (PlayerActions.gameOverCond) {
-			moveLeft = 0;
-		}
-		
-		if (!superPlayer) {
-			if (stress <= infarto) {
-				Debug.Log("Infarto Fulminante");
-				stress = 0;
-				infarto = 0;
-				PlayerActions.gameOverCond = true;
-				Invoke ("GameOverCondition", 4);
-			} else {
-				stress = Random.Range (0f, 200000f);
-				if (infarto < 10) {
-					infarto += 0.05f * Time.deltaTime;
-				}
-			}
-		}
-		if (Input.GetKeyDown(KeyCode.O) && age <= 4) {
-			age++;
-			AgeChanger (age);
-			Debug.Log ("Age: " + age);
-		}
-		if (Input.GetKeyDown(KeyCode.P) && age > 1) {
-			age--;
-			AgeChanger (age);
-			Debug.Log ("Age: " + age);
-		}
+		verificaInfarto();
 	}
-
-	void GameOverCondition () {
-			SceneManager.LoadScene(2);
-	}
-
-
-	void AgeChanger (float playerAge) {
-		
-		Time.timeScale = playerAge * 1.2f;
-		if (age == 1) {
-            SetPlayerCharacter(2f, 1f, 1);
-        }
-		if (age == 2) {
-            SetPlayerCharacter(3f, 3f, 0.75f);
-        }
-		if (age == 3) {
-            SetPlayerCharacter(4f, 3.5f, 0.5f);
-        }
-		if (age == 4) {
-            SetPlayerCharacter(6f, 3.5f, 0.25f);
-		}
-		if (PlayerActions.gameOverCond) {
-			SetPlayerCharacter(0f, 0f, 0f);
-		}
-	}
-
-    void SetPlayerCharacter(float speedAux, float jumpAux, float detailsAux){
-        speedMultiplyer = speedAux;
-        jumpMultiplyer 	= jumpAux;
-        details 		= detailsAux;
-		
-		speed			= initialSpeed * speedMultiplyer;
-		jump 			= initialJump * jumpMultiplyer;
-    }
 
 	void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "ground") jumping = false;
@@ -169,28 +70,7 @@ public class PlayerCharacter : MonoBehaviour {
 		}
 		
 		if (collision.gameObject.tag == "Fases da Vida") {
-			if (contadorFasesDavida == 0 && verificaFasesDaVida()) {
-				Sound[0].SetActive(false);
-				Sound[1].SetActive(true);
-				age = 2;
-				esposa = true;
-			} else if (contadorFasesDavida == 1 && verificaFasesDaVida()) {
-				Sound[0].SetActive(false);
-				Sound[1].SetActive(false);
-				Sound[2].SetActive(true);
-				age = 3;
-				diploma = true;
-			} else if (contadorFasesDavida == 2 && verificaFasesDaVida()) {
-				Sound[0].SetActive(false);
-				Sound[1].SetActive(false);
-				Sound[2].SetActive(false);
-				Sound[3].SetActive(true);
-				age = 4;
-				guitarra = true;
-			} else if (contadorFasesDavida == 3 && verificaFasesDaVida()) {
-				mae = true;
-			}
-			contadorFasesDavida++;
+			setFaseDaVida();
 			collision.gameObject.tag = "Untagged";
 		}
 	}
@@ -217,4 +97,116 @@ public class PlayerCharacter : MonoBehaviour {
 	int valorPombo() {
 		return (PlayerActions.maxEventCount/((age/10)+1));
 	}
+
+	private Vector2 velocidade(float x, float y) {
+		return new Vector2(x, y);
+	}
+
+	private void verificaInfarto() {
+		if (!superPlayer) {
+			if (stress <= infarto) {
+				Debug.Log("Infarto Fulminante");
+				stress = 0;
+				infarto = 0;
+				PlayerActions.gameOverCond = true;
+				Invoke ("GameOverCondition", 4);
+			} else {
+				stress = Random.Range (0f, 200000f);
+				if (infarto < 10) infarto += 0.05f * Time.deltaTime;
+			}
+		}
+	}
+
+	private void andaPlayer() {
+        if(!jumping && !eventWrapper && Time.time > canJump) rb.velocity = velocidade(hori * speed, vert * jump);
+		else if (jumping) canJump = Time.time + 0.3f;
+		else rb.velocity = velocidade(hori * speed, 0);
+	}
+
+	private void verificaParadaNoPombo() {
+		if (eventWrapper) {
+			rb.velocity = velocidade(0, 0);
+			if (PlayerActions.contador == valorPombo()) {
+				Destroy(gameObj);
+				setPombosConditions(false, false, 0);
+			}
+		}
+	}
+
+	private void calculaScore() {
+		if (eventWrapper && timerScore >= 0) {
+			timerScore -= 1 * Time.deltaTime;
+			scoreTime = (int) timerScore;
+		} else {
+			ScoreActions.contador += scoreTime;
+			scoreTime = 0;
+			timerScore = 20;
+		}
+	}
+
+	private void setAudioPlayer(bool pri, bool sec, bool ter, bool tet) {
+		Sound[0].SetActive(pri);
+		Sound[1].SetActive(sec);
+		Sound[2].SetActive(ter);
+		Sound[3].SetActive(tet);
+	}
+
+	private void setFaseDaVida() {
+		if (contadorFasesDavida == 0 && verificaFasesDaVida()) {
+			setAudioPlayer(false, true, false, false);
+			setIdadeDaVida(2);
+		} else if (contadorFasesDavida == 1 && verificaFasesDaVida()) {
+			setAudioPlayer(false, false, true, false);
+			setIdadeDaVida(3);
+		} else if (contadorFasesDavida == 2 && verificaFasesDaVida()) {
+			setAudioPlayer(false, false, false, true);
+			setIdadeDaVida(4);
+		} else if (contadorFasesDavida == 3 && verificaFasesDaVida()) {
+			mae = true;
+		}
+			contadorFasesDavida++;
+	}
+	private void setIdadeDaVida(int idade) {
+		if (idade == 2) esposa = true;
+		else if (idade == 3) diploma = true;
+		else if (idade == 4) guitarra = true;
+		else mae = true;
+	}
+
+	private void inicializador() {
+		rb = GetComponent<Rigidbody2D>();
+		age = 1;
+		infarto = 0.5f;
+		stress = 10;
+		moveLeft = 0.5f;
+		speed = initialSpeed = 1;
+		jump = initialJump = 5;
+		AgeChanger (1);
+		ScoreActions.ResetaContador();
+		contadorFasesDavida = 0;
+		setAudioPlayer(true, false, false, false);
+		timerScore = 20;
+	}
+
+		void GameOverCondition () {
+		SceneManager.LoadScene(2);
+	}
+
+	void AgeChanger (float playerAge) {
+		Time.timeScale = playerAge * 1.2f;
+		if (age == 1) SetPlayerCharacter(2f, 1f, 1);
+		if (age == 2) SetPlayerCharacter(3f, 3f, 0.75f);
+		if (age == 3) SetPlayerCharacter(4f, 3.5f, 0.5f);
+		if (age == 4) SetPlayerCharacter(6f, 3.5f, 0.25f);
+		if (PlayerActions.gameOverCond) SetPlayerCharacter(0f, 0f, 0f);
+	}
+
+    void SetPlayerCharacter(float speedAux, float jumpAux, float detailsAux){
+        speedMultiplyer = speedAux;
+        jumpMultiplyer 	= jumpAux;
+        details 		= detailsAux;
+		
+		speed			= initialSpeed * speedMultiplyer;
+		jump 			= initialJump * jumpMultiplyer;
+    }
 }
