@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 13285cf856d9fb14c92bb779b90a778b
+=======
+guid: cbf511e770fdc644fa2cb7615ec48d98
+>>>>>>> Stashed changes
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -75,7 +79,11 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
+<<<<<<< Updated upstream
     spriteID: 6ac7b0d5eb57bf241822a7786e356a16
+=======
+    spriteID: ee904b154408d1a4e905f0998341ebdb
+>>>>>>> Stashed changes
     vertices: []
     indices: 
     edges: []
