@@ -7,14 +7,14 @@
 
 # PREMISSA SOBRE O TEMA:
 
-*	O lar é representado em tudo que nos faz bem, um abraço, conforto, segurança, sentimentos,amor.
-*	Com isso levamos ao personagem o retorno por todos esses eventos, lembranças e emoções, e o jogador poderá sentir isso junto com o personagem.
+*	O lar é representado em tudo que nos faz bem, um abraço, conforto, segurança, sentimentos, amor.
+*	Com isso levamos ao personagem o retorno por todos esses eventos, lembranças e emoções, e o jogador poderá sentir isso junto com o personagem. Utilizando de uma narrativa visual de desenhos em papel, tons de cinza e animações minimalistas, esperamos criar um apego dos jogadores. A impessoalidade sobre os nomes é um planejamento de criar um apego emocional com os jogadores, mostrando que a morte, lembranças, vida e o lar são constantes na vida das pessoas.
 
 # SINOPSE - MEMORIES:
 
-	Em seu leito de morte, o personagem vendo pela janela do asilo, apreciando as paisagens ao redor, recuperando lembranças de sua vida, momentos que marcaram levando-o a uma viagem ao passado.
+		Em seu leito de morte, vendo pela janela do asilo, apreciando as paisagens ao redor, recuperando lembranças de sua vida, momentos que marcaram levando-o a uma viagem ao passado.
 	Momentos importantes da sua vida o transforma em mais jovem, lembrando de cada detalhe e cada emoção vivida durante anos.
-	Ajude nosso personagem nessa viagem nostálgica e emocionante.
+	Ajude-o nesta jornada nostálgica e emocionante em busca de uma última volta ao lar.
 
 
 # FERRAMENTAS UTILIZADAS:
